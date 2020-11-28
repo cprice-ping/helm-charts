@@ -75,7 +75,7 @@ useCases:
     useTrustedCert: false
   # Add PingAccess deployment for protected WAM Client traffic
   # Configures PF as the Token Provider
-  paAsWAM:
+  paAsAM:
     enabled: false
   # Configure PD Consent API and prep PF \ PA for Privacy Dashboard
   consentManagement: 
@@ -97,6 +97,7 @@ ping-devops:
     envs: 
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingdirectory
+      SERVER_PROFILE_BRANCH: main
     logging: INFO
     #ingress:
     #  enabled: false
@@ -115,7 +116,8 @@ ping-devops:
     enabled: true
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
-      SERVER_PROFILE_PATH: pingfederate   
+      SERVER_PROFILE_PATH: pingfederate
+      SERVER_PROFILE_BRANCH: main
     logging: INFO
     ingress:
       hosts:
@@ -136,6 +138,7 @@ ping-devops:
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingfederate
+      SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
     logging: INFO
     #ingress:
@@ -152,9 +155,11 @@ ping-devops:
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git 
       SERVER_PROFILE_PATH: pingcentral/logging
+      SERVER_PROFILE_BRANCH: main
       SERVER_PROFILE_PARENT: DATA
       SERVER_PROFILE_DATA_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_DATA_PATH: pingcentral/external-mysql-db
+      SERVER_PROFILE_DATA_BRANCH: main
     logging: INFO
 
   pingaccess:
@@ -182,8 +187,8 @@ collections:
     delegatedAdministration: 
       name: "Delegated Administration"
       url: https://www.getpostman.com/collections/67c0839677fa2b0fad81
-    paAsWAM:
-      name: "PA as WAM (PF)"
+    paAsAM:
+      name: "PA as Access Manager (PF)"
       url: https://www.getpostman.com/collections/6573a75f6042999e5c9f
     pingOneServices:
       mfa:
