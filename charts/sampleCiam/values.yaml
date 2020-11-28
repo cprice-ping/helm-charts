@@ -5,6 +5,7 @@ global:
   # Your specific environment variables - values are injected into Server Profiles
   envs:
     # Ping Global Values
+    # Named used in labels in PingOne and Ping Software
     ENVIRONMENT_NAME: "Sample-CIAM"
     # Default Administrative Password - also passed to APIs as {{globalPwd}}
     PING_IDENTITY_PASSWORD: "2FederateM0re"
@@ -40,7 +41,7 @@ pingOne:
   # https://github.com/cprice-ping/Customer360/blob/main/docs/sso-myping.md
   administration:
     # Set to `true` to enable My Ping - if `false`, Admin consoles will use LDAP (PF \ PD) or Native (PC \ PA)
-    useMyPing: false
+    useMyPing: true
     # Configure these values if `useMyPing` == true
     envId: "YourAdminEnvId"
     adminUserId: "YourAdminUserID" # Not Username - the UUID on the API tab
@@ -99,8 +100,6 @@ ping-devops:
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
     logging: INFO
-    #ingress:
-    #  enabled: false
     container:
       replicaCount: 1
     services:
@@ -141,8 +140,6 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
     logging: INFO
-    #ingress:
-    #  enabled: false
 
   pingdatasync:
     enabled: true
