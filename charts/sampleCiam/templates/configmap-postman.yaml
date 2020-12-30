@@ -35,7 +35,7 @@ data:
             },
             {
                 "key": "pdLdapHost",
-                "value": "{{ include "sampleCiam.pdAdminServiceName" . }}:{{ include "pingports.pdLdapPort" . }}",
+                "value": "{{ include "sampleCiam.pdAdminServiceName" . }}",
                 "enabled": true
             },
             {
@@ -84,8 +84,13 @@ data:
                 "enabled": true
             },
             {
-                "key": "adminAppId",
-                "value": {{ .Values.pingOne.administration.logonApp.id | quote }},
+                "key": "pfLogonAppId",
+                "value": {{ .Values.pingOne.administration.pfLogonApp.id | quote }},
+                "enabled": true
+            },
+            {
+                "key": "pfLogonAppSecret",
+                "value": {{ .Values.pingOne.administration.pfLogonApp.secret | quote }},
                 "enabled": true
             },
             {
@@ -104,6 +109,16 @@ data:
                 "enabled": true
             },
             {
+                "key": "paConsoleURL",
+                "value": "https://{{ include "sampleCiam.paAdminHostname" . }}", 
+                "enabled": true
+            },
+            {
+                "key": "pdsAdminURL",
+                "value": "https://{{ include "sampleCiam.pdsAdminServiceName" . }}:{{ include "pingports.pdsAdminPort" . }}", 
+                "enabled": true
+            },
+            {
                 "key": "pfConsoleURL",
                 "value": "https://{{ include "sampleCiam.pfAdminHostname" . }}", 
                 "enabled": true
@@ -116,6 +131,31 @@ data:
             {
                 "key": "delegatorSecure",
                 "value": true,
+                "enabled": true
+            }{{- end}}{{ if .Values.capabilities.accessManagement.enabled }},
+            {
+                "key": "paLogonAppId",
+                "value": {{ .Values.pingOne.administration.pfLogonApp.id | quote }},
+                "enabled": true
+            },
+            {
+                "key": "paLogonAppSecret",
+                "value": {{ .Values.pingOne.administration.pfLogonApp.secret | quote }},
+                "enabled": true
+            },
+            {
+                "key": "paAdminURL",
+                "value": "https://{{ include "sampleCiam.paAdminServiceName" . }}:{{ include "pingports.paAdminPort" . }}", 
+                "enabled": true
+            }{{- end}}{{ if .Values.capabilities.directory.enabled }},
+            {
+                "key": "pdLogonAppId",
+                "value": {{ .Values.pingOne.administration.pdLogonApp.id | quote }},
+                "enabled": true
+            },
+            {
+                "key": "pdLogonAppSecret",
+                "value": {{ .Values.pingOne.administration.pdLogonApp.secret | quote }},
                 "enabled": true
             }{{- end}}
         ],

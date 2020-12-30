@@ -2,47 +2,56 @@
 
 {{/* PingDirectory ConfigAPI */}}
 {{- define "pingports.pdConfigPort" -}}
-    {{- print (index .Values "ping-devops").pingdirectory.services.https.port }}
+    {{- print (index .Values "ping-devops").pingdirectory.services.https.servicePort }}
 {{- end }}
 
 {{/* PingDirectory non-ConfigAPI */}}
 {{- define "pingports.pdApiPort" -}}
-    {{- print (index .Values "ping-devops").pingdirectory.services.apis.port }}
+    {{- print (index .Values "ping-devops").pingdirectory.services.apis.servicePort }}
 {{- end }}
 
 {{/* PingDirectory LDAP */}}
 {{- define "pingports.pdLdapPort" -}}
-    {{- print (index .Values "ping-devops").pingdirectory.services.ldap.port }}
+    {{- print (index .Values "ping-devops").pingdirectory.services.ldap.servicePort }}
 {{- end }}
 
 {{/* PingDirectory LDAPS */}}
 {{- define "pingports.pdLdapsPort" -}}
-    {{- print (index .Values "ping-devops").pingdirectory.services.ldaps.port }}
+    {{- print (index .Values "ping-devops").pingdirectory.services.ldaps.servicePort }}
 {{- end }}
 
 {{/* PingDataConsole HTTPS */}}
 {{- define "pingports.pdConsolePort" -}}
-    {{- print (index .Values "ping-devops").pingdataconsole.services.https.port }} 
+    {{- print (index .Values "ping-devops").pingdataconsole.services.https.servicePort }} 
+{{- end }}
+
+{{/* PingDataConsole HTTPS */}}
+{{- define "pingports.pdsAdminPort" -}}
+    {{- print (index .Values "ping-devops").pingdatasync.services.https.servicePort }} 
 {{- end }}
 
 {{/* PingFederate Admin */}}
 {{- define "pingports.pfAdminPort" -}}
-    {{- print (index .Values "ping-devops" "pingfederate-admin" ).services.admin.port }} 
+    {{- print (index .Values "ping-devops" "pingfederate-admin" ).services.https.servicePort }} 
 {{- end }}
 
 {{/* PingFederate Runtime */}}
 {{- define "pingports.pfEnginePort" -}}
-    {{- print (index .Values "ping-devops" "pingfederate-engine" ).services.engine.port }}
+    {{- print (index .Values "ping-devops" "pingfederate-engine" ).services.https.servicePort }}
 {{- end }}
 
 {{/* PingDelegator */}}
 {{- define "pingports.pingDelegatorPort" -}}
-    {{- print (index .Values "ping-devops" ).pingdelegator.services.https.port }}
+    {{- print (index .Values "ping-devops" ).pingdelegator.services.https.servicePort }}
 {{- end }}
 
 {{/* PingAccess Admin */}}
 {{- define "pingports.paAdminPort" -}}
-    {{- print 9000 }} 
+    {{- print (index .Values "ping-devops" "pingaccess" ).services.admin.servicePort }}
+{{- end }}
+{{/* PingAccess Engine */}}
+{{- define "pingports.paRuntimePort" -}}
+    {{- print (index .Values "ping-devops" "pingaccess" ).services.engine.servicePort }}
 {{- end }}
 
 {{/* PingCentral Admin */}}

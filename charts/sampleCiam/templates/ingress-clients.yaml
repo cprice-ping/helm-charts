@@ -95,9 +95,17 @@ spec:
         backend:
           serviceName: {{ .Release.Name }}-pingdirectory
           servicePort: {{ include "pingports.pdApiPort" . }}
-      - path: /delegator/
+      - path: /delegator
         #pathType: Prefix
         backend:
           serviceName: {{ .Release.Name }}-pingdelegator
           servicePort: {{ include "pingports.pingDelegatorPort" . }}
+      {{- end }}
+      {{- if .Values.capabilities.accessManagement.enabled }}
+      # If PA is deployed - everything else goes there...
+      - path: /
+        #pathType: Prefix
+        backend:
+          serviceName: {{ .Release.Name }}-pingaccess
+          servicePort: {{ include "pingports.paRuntimePort" . }}
       {{- end }}

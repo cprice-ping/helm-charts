@@ -8,9 +8,9 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ .Release.Name }}-env-vars
 data:
-  {{- if .Values.pingOne.administration.useMyPing }}
-  ADMIN_CLIENT_ID: {{ .Values.pingOne.administration.logonApp.id | quote }}
-  ADMIN_CLIENT_SECRET: {{ .Values.pingOne.administration.logonApp.secret | quote }}
+  {{- if .Values.capabilities.authenticationAuthority.enabled }}
+  ADMIN_CLIENT_ID: {{ .Values.pingOne.administration.pfLogonApp.id | quote }}
+  ADMIN_CLIENT_SECRET: {{ .Values.pingOne.administration.pfLogonApp.secret | quote }}
   ADMIN_CLIENT_ISSUER: {{ include "sampleCiam.pingOneAdminUrl" . | quote }}
   ADMIN_CLIENT_AUTHZ: "{{ include "sampleCiam.pingOneAdminUrl" . }}/authorize"
   ADMIN_CLIENT_TOKEN: "{{ include "sampleCiam.pingOneAdminUrl" . }}/token"

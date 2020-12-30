@@ -27,6 +27,10 @@ global:
     enabled: true
     addReleaseNameToHost: append
     defaultDomain: ping-devops.com
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      kubernetes.io/ingress.class: "nginx-public"
+
 #### End Global ####
 
 # PingOne Service Details
@@ -37,31 +41,43 @@ pingOne:
   # This configures the proper endpoints for My Ping and PingOne Service IKs
   # PingOne Regions - "NA" | "EU" | "AP"
   envRegion: "NA"
-  # If using My Ping - enter the details for the Admin SSO Connection here
-  # https://github.com/cprice-ping/Customer360/blob/main/docs/sso-myping.md
   administration:
-    # Set to `true` to enable My Ping - if `false`, Admin consoles will use LDAP (PF \ PD) or Native (PC \ PA)
     useMyPing: true
-    # Configure these values if `useMyPing` == true
     envId: "YourAdminEnvId"
-    adminUserId: "YourAdminUserID" # Not Username - the UUID on the API tab
-    logonApp:
-      id: "YourAdminApp"
-      secret: "YourAdminSecret"
-    # Admin Environment's Worker App (Configured in Connections --> Worker) - with AdminUser permissions
+    adminUserId: "YourAdminUserId"
     workerApp:
-      id: "YourPFWorkerAppID"
-      secret: "YourPFWorkerAppSecret"
-  # This section is for the PingOne Service(s) details
+      id: "YourMgmtWorkerId"
+      secret: "YourMgmtWorkerSecret"
+    pfLogonApp:
+      id: "YourPFAdminAppId"
+      secret: "YourPFAdminAppSecret"
+    psLogonApp:
+      id: "YourPAAdminAppId"
+      secret: "YourPAAdminAppSecret"
+    pdLogonApp:
+      id: "YourPDAdminAppId"
+      secret: "YourPDAdminAppSecret"
   services:
     enabled: true
-    # If licensed, API calls will be made to create the proper PingOne components and configure the IKs in PingFed
-    licensed:
-      mfa: 
-        enabled: true # MFA_TRIAL will be used initially
-      risk: 
-        enabled: false
 ### End - PingOne
+
+capabilities:
+  authenticationAuthority:
+    enabled: true
+  directory:
+    enabled: true
+  multiFactorAuthentication:
+    enabled: false
+  accessManagement:
+    enabled: false
+  dynamicAuthorization:
+    enabled: false
+  risk:
+    enabled: false
+
+baseline:
+  directory:
+    enabled: true
 
 # Enable these to include with the base CIAM configuration
 useCases:
@@ -80,12 +96,17 @@ useCases:
     enabled: false
   # Configure PD Consent API and prep PF \ PA for Privacy Dashboard
   consentManagement: 
-    enabled: true
+    enabled: false
   # Configure PD for DelAdmin (Config and Users) and install Delegator
   # Server Profile: https://github.com/cprice-ping/Profile-DelAdmin
   delegatedAdministration: 
-    enabled: true
+    enabled: false
+  socialConnections:
+    enabled: false
 #### End - Use Cases
+
+usePingConfig:
+  enabled: true
 
 ## Product Specific values
 # DevOps Keys and \ or License files can be applied to the container
@@ -99,17 +120,21 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
+    image:
+      tag: edge
     logging: INFO
     container:
       replicaCount: 1
     services:
-      https:
-        clusterService: true
       apis:
-        clusterService: true
+        dataService: true
+        servicePort: 2443
+        containerPort: 2443
   
   pingdataconsole:
     enabled: true
+    image:
+      tag: edge
 
   pingfederate-admin:
     enabled: true
@@ -117,20 +142,22 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
+    image:
+      tag: edge
     logging: INFO
-    ingress:
-      hosts:
-        - host: pingfederate-admin._defaultDomain_
-          paths:
-          - path: /
-            backend:
-              servicePort: 443 
+    #ingress:
+    #  hosts:
+    #    - host: pingfederate-admin._defaultDomain_
+    #      paths:
+    #      - path: /
+    #        backend:
+    #          serviceName: https 
     services:
       # Allows OIDC callbacks to PF through the GSA Ingress
       # Comment out `admin` section to default to :9999
-      admin:
-        port: 443
-        targetPort: 443
+      https:
+        servicePort: 443
+        containerPort: 443
 
   pingfederate-engine:
     enabled: true
@@ -139,10 +166,14 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
+    image:
+      tag: edge
     logging: INFO
 
   pingdatasync:
     enabled: true
+    image:
+      tag: edge
     logging: INFO
 
   pingcentral:
@@ -161,16 +192,22 @@ ping-devops:
 
   pingaccess:
     enabled: false
+    image:
+      tag: edge
     logging: INFO
 
   pingdelegator:
-    enabled: true
+    enabled: false
+    envs:
+      PF_ENGINE_PUBLIC_PORT: null
+    image:
+      tag: edge
 
 collections:
   solutions:
     sampleCiam:
       name: "Sample CIAM" 
-      url: https://www.getpostman.com/collections/f1f5ffff5ddd891e720d
+      url: https://www.getpostman.com/collections/4dc617002fcb8c828127
   useCases:
     paAsProxy:
       name: "PA as Proxy"
@@ -187,13 +224,29 @@ collections:
     paAsAM:
       name: "PA as Access Manager (PF)"
       url: https://www.getpostman.com/collections/6573a75f6042999e5c9f
-    pingOneServices:
-      mfa:
-        name: "PingOne MFA Integration"
-        url: https://www.getpostman.com/collections/11e33dc2001c7555eb06
-      risk:
-        name: "PingOne Risk Integration"
-        url: https://pingonerisk.com
-      pf:
-        name: "PingOne Federation to PF"
-        url: https://pingonefederation.com
+    socialConnections:
+      name: "Social Connections"
+      url: https://www.getpostman.com/collections/3bc255e9deeec515a65b
+  capabilities:
+    pingOne:
+      name: "My Ping Environment"
+      url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
+    authenticationAuthority:
+      name: "Authentication Authority"
+      url: https://www.getpostman.com/collections/ea904b8707ab682e35cd
+    directory: 
+      name: "Directory"
+      url: https://www.getpostman.com/collections/f398715be18b040e211d
+    accessManagement:
+      name: "Access Management"
+      url: https://www.getpostman.com/collections/934936decf928c0cc792
+    multiFactorAuthentication:
+      name: "Multi Factor Service"
+      url: https://www.getpostman.com/collections/169d34297acffb2e9aad
+    risk:
+      name: "Adaptive Authentication"
+      url: https://www.getpostman.com/collections/62d37170e2e1bbbc6ed2
+  baseline:
+    directory:
+      name: "PD Baseline - PF Config Store"
+      url: https://www.getpostman.com/collections/f59e241da208cb731775

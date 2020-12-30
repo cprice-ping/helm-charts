@@ -1,3 +1,4 @@
+{{- if .Values.usePingConfig.enabled -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -13,8 +14,7 @@ spec:
       containers:
       - env:
         - name: COLLECTIONS
-          # collectionNames: {{ include "sampleCiam.useCaseNames" . | trimSuffix " : " }}
-          value: {{ include "sampleCiam.useCaseUrls" . | trimSuffix "," }}{{ include "sampleCiam.addPingOneConfigs" . }}
+          value: {{ include "sampleCiam.addCapabilityURLs" . }}{{ include "sampleCiam.useCaseUrls" . }}
         image: pricecs/pingconfigurator:1.1
         imagePullPolicy: "Always"
         name: pingconfig
@@ -32,3 +32,4 @@ spec:
             path: postman_vars.json
           name: {{ .Release.Name }}-postman
         name: {{ .Release.Name }}-postman
+{{- end -}}

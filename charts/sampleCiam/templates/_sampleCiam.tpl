@@ -29,32 +29,6 @@
     {{- print "https://auth.pingone." }}{{ include "sampleCiam.pingOneTld" . }}{{ print "/" .Values.pingOne.administration.envId "/as" }}
 {{- end }}
 
-{{/* Used to build the additional URLs passed into the job/pingconfig */}}
-{{- define "sampleCiam.useCaseUrls" -}}
-    {{- $useCaseGlobal :=  .Values.useCases }}
-    {{- $useCaseDetails := .Values.collections.useCases }}
-    {{- $merged := merge $useCaseDetails $useCaseGlobal }}
-    {{- printf .Values.collections.solutions.sampleCiam.url }},
-    {{- range $key, $val := $merged }}
-        {{- if $val.enabled }}
-            {{- printf $val.url }}, 
-        {{- end }}
-    {{- end }}
-{{- end }}
-
-{{/* Used to build the of the collections URLs passed into the job/pingconfig */}}
-{{- define "sampleCiam.useCaseNames" -}}
-    {{- $useCaseGlobal :=  .Values.useCases }}
-    {{- $useCaseDetails := .Values.collections.useCases }}
-    {{- $merged := merge $useCaseDetails $useCaseGlobal }}
-    {{- printf .Values.collections.solutions.sampleCiam.name }}{{- print " --> "}}  
-    {{- range $key, $val := $merged }}
-        {{- if $val.enabled }}
-            {{- printf $val.name }}{{ printf " : " }}  
-        {{- end }}
-    {{- end }}
-{{- end }}
-
 {{/* Helper for the Ingress Hostname */}}
 {{- define "sampleCiam.hostname" -}}
         {{- .Release.Name }}{{- print }}.ping-devops.com
@@ -80,6 +54,10 @@
     {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingdelegator" ) .Values.global)) }}
 {{- end }}
 
+{{- define "sampleCiam.paAdminServiceName" -}}
+    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingaccess" ) .Values.global)) }}
+{{- end }}
+
 {{- define "sampleCiam.pfAdminHostname" -}}
     {{ if eq .Values.global.ingress.addReleaseNameToHost "append" }}
         {{- print "pingfederate-admin-" .Release.Name "." .Values.global.ingress.defaultDomain }}
@@ -100,6 +78,16 @@
     {{- end -}}
 {{- end -}}
 
+{{- define "sampleCiam.paAdminHostname" -}}
+    {{ if eq .Values.global.ingress.addReleaseNameToHost "append" }}
+        {{- print "pingaccess-admin-" .Release.Name "." .Values.global.ingress.defaultDomain }}
+    {{- else if eq .Values.global.ingress.addReleaseNameToHost "prepend" -}}
+        {{- print .Release.Name "-" "pingaccess-admin." .Values.global.ingress.defaultDomain }}
+    {{- else -}}
+        {{- print "pingaccess-admin." .Values.global.ingress.defaultDomain }}
+    {{- end -}}
+{{- end -}}
+
 {{/* Playing with Lookups */}}
 {{- define "sampleCiam.pfAdminHostnameLookup" -}}
     {{ range $index, $val := ((lookup "extensions/v1beta1" "Ingress" .Release.Namespace ( include "sampleCiam.pfAdminServiceName" . )).spec.rules) }}
@@ -117,3 +105,71 @@
         {{- end -}}
         {{ print "," .Values.collections.useCases.pingOneServices.pf.url }}
 {{- end -}}
+
+{{/* Playing with Merges for PingOne --> Postman URLs  - Testing splitting out components in to separate collections*/}}
+{{- define "sampleCiam.addPingOneConfigURLs" -}}
+        {{- $pingOne := merge .Values.capabilities .Values.collections.capabilities -}}
+        {{ print .Values.collections.capabilities.pingOne.url }}
+        {{- range $index, $val := $pingOne -}}
+            {{- if $val.enabled -}}
+                {{ print "," $val.url }}
+            {{- end -}}
+        {{- end -}}
+{{- end -}}
+
+{{- define "sampleCiam.addPingOneConfigNames" -}}
+        {{- $pingOne := merge .Values.capabilities .Values.collections.capabilities -}}
+        {{ print .Values.collections.capabilities.pingOne.name }}
+        {{- range $index, $val := $pingOne -}}
+            {{- if $val.enabled -}}
+                {{ print ", " $val.name }}
+            {{- end -}}
+        {{- end -}}
+{{- end -}}
+
+{{- define "sampleCiam.addCapabilityURLs" -}}
+        {{- $pingOne := merge .Values.capabilities .Values.collections.capabilities -}}
+        {{ print .Values.collections.capabilities.pingOne.url }},
+        {{- if .Values.baseline.directory.enabled -}}
+            {{- printf .Values.collections.baseline.directory.url }}
+        {{- end -}}
+        {{- range $index, $val := $pingOne -}}
+            {{- if $val.enabled -}}
+                {{ print "," $val.url }}
+            {{- end -}}
+        {{- end -}}
+{{- end -}}
+
+{{- define "sampleCiam.addCapabilityNames" -}}
+        {{- $capabilities := merge .Values.capabilities .Values.collections.capabilities -}}
+        {{ print .Values.collections.capabilities.pingOne.name }},  
+        {{- if .Values.baseline.directory.enabled -}}
+            {{- print " " .Values.collections.baseline.directory.name }}
+        {{- end -}}
+        {{- range $index, $val := $capabilities -}}
+            {{- if $val.enabled -}}
+                {{ print ", " $val.name }}
+            {{- end -}}
+        {{- end -}}
+{{- end -}}
+
+
+{{/* Used to build the additional URLs passed into the job/pingconfig */}}
+{{- define "sampleCiam.useCaseUrls" -}}
+    {{- $useCaseURLs := merge .Values.collections.useCases .Values.useCases }}
+    {{- range $key, $val := $useCaseURLs }}
+        {{- if $val.enabled }}
+            {{- print "," $val.url }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+
+{{/* Used to build the of the collections URLs passed into the job/pingconfig */}}
+{{- define "sampleCiam.useCaseNames" -}}
+    {{- $useCaseNames := merge .Values.collections.useCases .Values.useCases }}
+    {{- range $key, $val := $useCaseNames }}
+        {{- if $val.enabled }}
+            {{- print $val.name ", " }}
+        {{- end }}
+    {{- end }}
+{{- end }}
