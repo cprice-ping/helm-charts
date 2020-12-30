@@ -7,10 +7,11 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # 0.1.0 - Initial release based on pingidentity/ping-devops 
 # 0.1.1 - Adding SERVER_PROFILE_BRANCH=main to values.yaml
-version: 0.1.1
+# 0.2.0 - Release requires Dec 2020 versions of software
+version: 0.2.0-beta
 
-# This is the version number of the application being deployed.
-appVersion: 3.0.1
+# This is the release date of minumum Ping software
+appVersion: 2020-12 
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:

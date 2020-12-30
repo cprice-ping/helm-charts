@@ -6,9 +6,6 @@ Enabled Capabilities:
 Enabled Use Cases:
 {{ include "sampleCiam.useCaseNames" . | trimSuffix ", " }}
 
-Collections:
-{{ include "sampleCiam.addCapabilityNames" . }}, {{ include "sampleCiam.useCaseNames" . | trimSuffix ", " }}
-
 Environment Name: {{ .Values.global.envs.ENVIRONMENT_NAME }}
 
 Product Consoles:
