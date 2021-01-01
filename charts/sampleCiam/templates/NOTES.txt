@@ -18,7 +18,7 @@ PingFederate:  https://{{ include "sampleCiam.pfAdminHostname" . -}}/pingfederat
 PingAccess:    https://{{ include "sampleCiam.paAdminHostname" . }}
 {{- end }}
 {{- if .Values.useCases.delegatedAdministration.enabled }}
-Delegator:     https://{{ include "sampleCiam.hostname" . }}/delegator
+Delegator:     https://{{ include "sampleCiam.hostname" . }}/delegator/
 {{- end }}
 
 External Hostname:

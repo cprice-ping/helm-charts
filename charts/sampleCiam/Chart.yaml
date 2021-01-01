@@ -10,7 +10,7 @@ type: application
 # 0.2.0 - Release requires Dec 2020 versions of software
 # 0.2.0 - Updated to ping-devops 0.4.x
 # 0.2.0 - Added Use Cases - CIBA \ Access Control \ User Profile
-version: 0.2.0-beta2
+version: 0.2.0-beta
 
 # This is the release date of minumum Ping software
 appVersion: 2020-12 
