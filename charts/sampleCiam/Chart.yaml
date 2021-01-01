@@ -8,6 +8,8 @@ type: application
 # 0.1.0 - Initial release based on pingidentity/ping-devops 
 # 0.1.1 - Adding SERVER_PROFILE_BRANCH=main to values.yaml
 # 0.2.0 - Release requires Dec 2020 versions of software
+# 0.2.0 - Updated to ping-devops 0.4.x
+# 0.2.0 - Added Use Cases - CIBA \ Access Control \ User Profile
 version: 0.2.0-beta
 
 # This is the release date of minumum Ping software
@@ -16,5 +18,5 @@ appVersion: 2020-12
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: ~0.3.0
+  version: ~0.4.0
   repository: https://helm.pingidentity.com

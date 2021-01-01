@@ -50,7 +50,7 @@
     {{- print (index .Values "ping-devops" "pingaccess" ).services.admin.servicePort }}
 {{- end }}
 {{/* PingAccess Engine */}}
-{{- define "pingports.paRuntimePort" -}}
+{{- define "pingports.paEnginePort" -}}
     {{- print (index .Values "ping-devops" "pingaccess" ).services.engine.servicePort }}
 {{- end }}
 

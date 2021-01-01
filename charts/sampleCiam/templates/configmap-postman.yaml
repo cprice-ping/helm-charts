@@ -132,7 +132,7 @@ data:
                 "key": "delegatorSecure",
                 "value": true,
                 "enabled": true
-            }{{- end}}{{ if .Values.capabilities.accessManagement.enabled }},
+            }{{- end}}{{ if .Values.capabilities.accessManager.enabled }},
             {
                 "key": "paLogonAppId",
                 "value": {{ .Values.pingOne.administration.pfLogonApp.id | quote }},
@@ -144,10 +144,20 @@ data:
                 "enabled": true
             },
             {
+                "key": "paVirtualHost",
+                "value": {{ include "sampleCiam.hostname" . | quote }},
+                "enabled": true
+            },
+            {
+                "key": "paVirtualPort",
+                "value": 443,
+                "enabled": true
+            },
+            {
                 "key": "paAdminURL",
                 "value": "https://{{ include "sampleCiam.paAdminServiceName" . }}:{{ include "pingports.paAdminPort" . }}", 
                 "enabled": true
-            }{{- end}}{{ if .Values.capabilities.directory.enabled }},
+            }{{- end}}{{ if .Values.useCases.userProfiles.enabled }},
             {
                 "key": "pdLogonAppId",
                 "value": {{ .Values.pingOne.administration.pdLogonApp.id | quote }},

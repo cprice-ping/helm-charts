@@ -64,11 +64,9 @@ pingOne:
 capabilities:
   authenticationAuthority:
     enabled: true
-  directory:
-    enabled: true
   multiFactorAuthentication:
     enabled: false
-  accessManagement:
+  accessManager:
     enabled: false
   dynamicAuthorization:
     enabled: false
@@ -81,18 +79,12 @@ baseline:
 
 # Enable these to include with the base CIAM configuration
 useCases:
-  # Add PingAccess proxy deployment for all Client traffic, instead of Ingress 
-  paAsProxy:
-    # If enabled, create your `externalHostname` DNS record as a CNAME to `pa.ping-demos.com`
-    # This will send traffic through the `nginx-public-passthrough` Ingress IP
-    enabled: false
-    ## Set TRUSTED_CERT to `true` if you want a Let's Encrypt Cert
-    ## (Leave to `false` while testing - so you don't trip LE rate limits)
-    ## Configure `externalDNS` above if you want a Vanity domain with ACME managed cert
-    useTrustedCert: false
-  # Add PingAccess deployment for protected WAM Client traffic
+  # Add PingAccess deployment for protected Client traffic
   # Configures PF as the Token Provider
-  paAsAM:
+  accessControl:
+    enabled: false
+  # Adds OIDC CIBA to PingFed - requires PingOne MFA
+  ciba:
     enabled: false
   # Configure PD Consent API and prep PF \ PA for Privacy Dashboard
   consentManagement: 
@@ -101,10 +93,19 @@ useCases:
   # Server Profile: https://github.com/cprice-ping/Profile-DelAdmin
   delegatedAdministration: 
     enabled: false
+  # Adds SCIMv2 API to PD
+  scim:
+    enabled: false
+  # Adds Facebook \ Google Adapters and adds them to the Registration LIP
+  # They do need to be configured with **your** ClientID \ Secrets
   socialConnections:
+    enabled: false
+  # Adds Users to PD - enables DataSync
+  userProfiles:
     enabled: false
 #### End - Use Cases
 
+# Set to `false` if using this chart with Server Profile
 usePingConfig:
   enabled: true
 
@@ -198,8 +199,6 @@ ping-devops:
 
   pingdelegator:
     enabled: false
-    envs:
-      PF_ENGINE_PUBLIC_PORT: null
     image:
       tag: edge
 
@@ -212,6 +211,9 @@ collections:
     paAsProxy:
       name: "PA as Proxy"
       url: https://www.getpostman.com/collections/eaa397bd3a35ef3095c1
+    ciba:
+      name: "CIBA"
+      url: https://www.getpostman.com/collections/a2f18fed21e4a14d048a
     consentManagement:
       name: "Consent Management"
       url: https://www.getpostman.com/collections/4f27daff62383fd3f4ed
@@ -221,24 +223,27 @@ collections:
     delegatedAdministration: 
       name: "Delegated Administration"
       url: https://www.getpostman.com/collections/67c0839677fa2b0fad81
-    paAsAM:
-      name: "PA as Access Manager (PF)"
-      url: https://www.getpostman.com/collections/6573a75f6042999e5c9f
+    accessControl:
+      name: "Access Control (API \\ Web)"
+      url: https://www.getpostman.com/collections/30bd6d0e5f4a523c9448
+    scim:
+      name: "SCIM v2"
+      url: https://www.getpostman.com/collections/8b746e4dc422b1a490a7
     socialConnections:
       name: "Social Connections"
       url: https://www.getpostman.com/collections/3bc255e9deeec515a65b
+    userProfiles: 
+      name: "Unified User Profiles"
+      url: https://www.getpostman.com/collections/f398715be18b040e211d
   capabilities:
     pingOne:
-      name: "My Ping Environment"
+      name: "My Ping"
       url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
     authenticationAuthority:
       name: "Authentication Authority"
       url: https://www.getpostman.com/collections/ea904b8707ab682e35cd
-    directory: 
-      name: "Directory"
-      url: https://www.getpostman.com/collections/f398715be18b040e211d
-    accessManagement:
-      name: "Access Management"
+    accessManager:
+      name: "Access Manager"
       url: https://www.getpostman.com/collections/934936decf928c0cc792
     multiFactorAuthentication:
       name: "Multi Factor Service"
@@ -248,5 +253,5 @@ collections:
       url: https://www.getpostman.com/collections/62d37170e2e1bbbc6ed2
   baseline:
     directory:
-      name: "PD Baseline - PF Config Store"
+      name: "Data Store"
       url: https://www.getpostman.com/collections/f59e241da208cb731775

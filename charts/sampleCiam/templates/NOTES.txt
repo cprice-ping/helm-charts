@@ -14,7 +14,7 @@ My Ping:       https://console.pingone.{{ include "sampleCiam.pingOneTld" .}}?en
 {{ end }}
 PingData:      https://{{ include "sampleCiam.pdAdminHostname" . }}
 PingFederate:  https://{{ include "sampleCiam.pfAdminHostname" . -}}/pingfederate
-{{- if .Values.capabilities.accessManagement.enabled }}
+{{- if .Values.capabilities.accessManager.enabled }}
 PingAccess:    https://{{ include "sampleCiam.paAdminHostname" . }}
 {{- end }}
 {{- if .Values.useCases.delegatedAdministration.enabled }}
@@ -26,9 +26,14 @@ External Hostname:
 
 Authentication Policy Samples:
 SAML (Single_Factor): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-SAML
-OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}(Single_Factor):{{- end -}} https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://cprice-decoder.glitch.me/oidc&scope=openid%20profile
+OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}{{- print " (Single_Factor):  " -}}{{- end -}}https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://cprice-decoder.glitch.me/oidc&scope=openid%20profile
 
 OIDC Decoder Info:
 Issuer:        https://{{ include "sampleCiam.hostname" . }}
 Client ID:     PingLogon
 Client Secret: {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
+
+{{ if .Values.capabilities.accessManager.enabled -}}
+Access Control Demo:
+https://{{ include "sampleCiam.hostname" . }}/headers
+{{- end -}}
