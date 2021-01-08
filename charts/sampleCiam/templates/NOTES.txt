@@ -40,5 +40,5 @@ Client Secret: {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
 {{ if .Values.capabilities.accessManager.enabled -}}
 Access Control Demo:
 https://{{ include "sampleCiam.hostname" . }}/headers
-{{- end -}}
+{{ end -}}
 -----------------------------------
