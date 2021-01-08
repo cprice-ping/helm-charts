@@ -1,3 +1,4 @@
+-----------------------------------
 This chart installs a CIAM Solution stack of Ping products.
 
 Enabled Capabilities:
@@ -26,7 +27,10 @@ External Hostname:
 
 Authentication Policy Samples:
 SAML (Single_Factor): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-SAML
-OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}{{- print " (Single_Factor):  " -}}{{- end -}}https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://cprice-decoder.glitch.me/oidc&scope=openid%20profile
+OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}{{- print " (Single_Factor): " -}}{{- end -}}https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://cprice-decoder.glitch.me/oidc&scope=openid%20profile
+
+Sample Users:
+user.[0-4] | {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
 
 OIDC Decoder Info:
 Issuer:        https://{{ include "sampleCiam.hostname" . }}
@@ -37,3 +41,4 @@ Client Secret: {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
 Access Control Demo:
 https://{{ include "sampleCiam.hostname" . }}/headers
 {{- end -}}
+-----------------------------------

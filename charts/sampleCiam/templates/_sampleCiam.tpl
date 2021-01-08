@@ -31,7 +31,7 @@
 
 {{/* Helper for the Ingress Hostname */}}
 {{- define "sampleCiam.hostname" -}}
-        {{- .Release.Name }}{{- print }}.ping-devops.com
+        {{- .Release.Name }}{{- print "." }}{{ default "ping-devops.com" .Values.global.envs.DOMAIN_NAME }}
 {{- end }}
 
 {{- define "sampleCiam.pfAdminServiceName" -}}

@@ -15,7 +15,7 @@ spec:
       - env:
         - name: COLLECTIONS
           value: {{ include "sampleCiam.addCapabilityURLs" . }}{{ include "sampleCiam.useCaseUrls" . }}
-        image: pricecs/pingconfigurator:1.1
+        image: pricecs/pingconfigurator:latest
         imagePullPolicy: "Always"
         name: pingconfig
         resources: {}

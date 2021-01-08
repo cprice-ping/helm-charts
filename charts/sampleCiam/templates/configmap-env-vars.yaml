@@ -29,8 +29,8 @@ data:
   {{- if .Values.useCases.delegatedAdministration.enabled }}
   PD_DELEGATOR_PUBLIC_HOSTNAME: {{ include "sampleCiam.hostname" .  | quote }}
   PF_ENGINE_PUBLIC_HOSTNAME: {{ include "sampleCiam.hostname" .  | quote }}
-  PF_ENGINE_PUBLIC_PORT: ""
-  PF_DELEGATOR_CLIENTID: "Delegator"
+  PF_DELEGATOR_CLIENTID: "dadmin"
   PD_ENGINE_PUBLIC_HOSTNAME: {{ include "sampleCiam.hostname" .  | quote }}
   PD_ENGINE_PUBLIC_PORT: "443"
+  PD_DELEGATOR_PROFILE_SCOPE_ENABLED: "true"
   {{- end }}
