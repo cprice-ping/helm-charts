@@ -144,7 +144,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
     image:
-      tag: 10.2.0-edge
+      tag: 10.2.1-edge
     logging: INFO
     #ingress:
     #  hosts:
@@ -168,7 +168,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
     image:
-      tag: 10.2.0-edge
+      tag: 10.2.1-edge
     logging: INFO
 
   pingdatasync:
