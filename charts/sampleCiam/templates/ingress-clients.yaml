@@ -101,6 +101,6 @@ spec:
       - path: /
         #pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingaccess
+          serviceName: {{ .Release.Name }}-pingaccess-engine
           servicePort: {{ include "pingports.paEnginePort" . }}
       {{- end }}

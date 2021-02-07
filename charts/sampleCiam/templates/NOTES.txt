@@ -26,6 +26,7 @@ External Hostname:
 {{ include "sampleCiam.hostname" . }}
 
 Authentication Policy Samples:
+{{ if .Values.capabilities.verify.enabled }}SAML (Verify): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-Verify{{ end }}
 SAML (Single_Factor): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-SAML
 OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}{{- print " (Single_Factor): " -}}{{- end -}}https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://cprice-decoder.glitch.me/oidc&scope=openid%20profile
 

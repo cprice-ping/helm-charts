@@ -55,7 +55,11 @@
 {{- end }}
 
 {{- define "sampleCiam.paAdminServiceName" -}}
-    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingaccess" ) .Values.global)) }}
+    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingaccess-admin" ) .Values.global)) }}
+{{- end }}
+
+{{- define "sampleCiam.paEngineServiceName" -}}
+    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingaccess-engine" ) .Values.global)) }}
 {{- end }}
 
 {{- define "sampleCiam.pfAdminHostname" -}}

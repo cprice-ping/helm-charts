@@ -72,6 +72,8 @@ capabilities:
     enabled: false
   risk:
     enabled: false
+  verify:
+    enabled: false
 
 baseline:
   directory:
@@ -102,6 +104,9 @@ useCases:
     enabled: false
   # Adds Users to PD - enables DataSync
   userProfiles:
+    enabled: false
+  # Use the PingOne Verify Sample App
+  verifyDemoEnv:
     enabled: false
 #### End - Use Cases
 
@@ -144,7 +149,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
     image:
-      tag: 10.2.1-edge
+      tag: edge
     logging: INFO
     #ingress:
     #  hosts:
@@ -168,7 +173,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
     image:
-      tag: 10.2.1-edge
+      tag: edge
     logging: INFO
 
   pingdatasync:
@@ -191,7 +196,13 @@ ping-devops:
       SERVER_PROFILE_DATA_BRANCH: main
     logging: INFO
 
-  pingaccess:
+  pingaccess-admin:
+    enabled: false
+    image:
+      tag: edge
+    logging: INFO
+
+  pingaccess-engine:
     enabled: false
     image:
       tag: edge
@@ -206,10 +217,10 @@ ping-devops:
       tag: edge
 
 collections:
-  solutions:
-    sampleCiam:
-      name: "Sample CIAM" 
-      url: https://www.getpostman.com/collections/4dc617002fcb8c828127
+  #solutions:
+  #  sampleCiam:
+  #    name: "Sample CIAM" 
+  #    url: https://www.getpostman.com/collections/4dc617002fcb8c828127
   useCases:
     paAsProxy:
       name: "PA as Proxy"
@@ -233,27 +244,33 @@ collections:
       name: "SCIM v2"
       url: https://www.getpostman.com/collections/8b746e4dc422b1a490a7
     socialConnections:
-      name: "Social Connections"
-      url: https://www.getpostman.com/collections/3bc255e9deeec515a65b
+      name: "Social Connections - Dev"
+      url: https://www.getpostman.com/collections/69ea2f964dcb562299db
     userProfiles: 
       name: "Unified User Profiles"
       url: https://www.getpostman.com/collections/f398715be18b040e211d
+    verifyDemoEnv:
+      name: "PingVerify Demo Env"
+      url: https://www.getpostman.com/collections/fbb4f0dfa372912209f0
   capabilities:
     pingOne:
       name: "My Ping"
       url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
     authenticationAuthority:
-      name: "Authentication Authority"
-      url: https://www.getpostman.com/collections/ea904b8707ab682e35cd
+      name: "Authentication Authority - Dev"
+      url: https://www.getpostman.com/collections/d44bd9bcbe599eec80a7
     accessManager:
       name: "Access Manager"
       url: https://www.getpostman.com/collections/934936decf928c0cc792
     multiFactorAuthentication:
-      name: "Multi Factor Service"
-      url: https://www.getpostman.com/collections/169d34297acffb2e9aad
+      name: "Multi Factor Service - Dev"
+      url: https://www.getpostman.com/collections/8c8a18c411a8222a2469
     risk:
-      name: "Adaptive Authentication"
-      url: https://www.getpostman.com/collections/62d37170e2e1bbbc6ed2
+      name: "Adaptive Authentication - Dev"
+      url: https://www.getpostman.com/collections/c858030284d959de50f7
+    verify:
+      name: "Identity Verification"
+      url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
   baseline:
     directory:
       name: "Data Store"
