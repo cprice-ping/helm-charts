@@ -19,5 +19,5 @@ appVersion: 2021-02
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: ~0.4.0
+  version: 0.4.0
   repository: https://helm.pingidentity.com
