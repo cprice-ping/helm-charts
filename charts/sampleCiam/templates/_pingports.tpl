@@ -47,11 +47,11 @@
 
 {{/* PingAccess Admin */}}
 {{- define "pingports.paAdminPort" -}}
-    {{- print (index .Values "ping-devops" "pingaccess-admin" ).services.https.servicePort }}
+    {{- print (index .Values "ping-devops" "pingaccess" ).services.admin.servicePort }}
 {{- end }}
 {{/* PingAccess Engine */}}
 {{- define "pingports.paEnginePort" -}}
-    {{- print (index .Values "ping-devops" "pingaccess-engine" ).services.https.servicePort }}
+    {{- print (index .Values "ping-devops" "pingaccess" ).services.engine.servicePort }}
 {{- end }}
 
 {{/* PingCentral Admin */}}
