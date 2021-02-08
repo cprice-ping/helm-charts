@@ -196,13 +196,7 @@ ping-devops:
       SERVER_PROFILE_DATA_BRANCH: main
     logging: INFO
 
-  pingaccess-admin:
-    enabled: false
-    image:
-      tag: edge
-    logging: INFO
-
-  pingaccess-engine:
+  pingaccess:
     enabled: false
     image:
       tag: edge
