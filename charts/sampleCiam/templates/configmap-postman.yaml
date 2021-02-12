@@ -20,6 +20,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "releaseName",
+                "value": {{ .Release.Name | quote }},
+                "enabled": true
+            },
+            {
                 "key": "globalPwd",
                 "value": {{ .Values.global.envs.PING_IDENTITY_PASSWORD | quote }},
                 "enabled": true
