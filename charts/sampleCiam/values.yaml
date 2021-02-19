@@ -11,6 +11,7 @@ global:
     PING_IDENTITY_PASSWORD: "2FederateM0re"
     ## BaseDN of the datastore
     #USER_BASE_DN: "dc=example.com"
+    decoderUrl: https://decoder.pingidentity.cloud
 
   # If you'd like to separate the stack from other deployments in your namespace
   # prepend | append | none  
@@ -76,6 +77,8 @@ capabilities:
     enabled: false
 
 baseline:
+  initialize:
+    enabled: true
   directory:
     enabled: true
 
@@ -164,6 +167,8 @@ ping-devops:
       https:
         servicePort: 443
         containerPort: 443
+    workload:
+      type: "StatefulSet"
 
   pingfederate-engine:
     enabled: true
@@ -180,20 +185,6 @@ ping-devops:
     enabled: true
     image:
       tag: edge
-    logging: INFO
-
-  pingcentral:
-    enabled: false
-    tlsBlindTrust: true
-    tlsVerifyHostnames: false
-    envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git 
-      SERVER_PROFILE_PATH: pingcentral/logging
-      SERVER_PROFILE_BRANCH: main
-      SERVER_PROFILE_PARENT: DATA
-      SERVER_PROFILE_DATA_URL: https://github.com/cprice-ping/Sample-CIAM.git
-      SERVER_PROFILE_DATA_PATH: pingcentral/external-mysql-db
-      SERVER_PROFILE_DATA_BRANCH: main
     logging: INFO
 
   pingaccess-admin:
@@ -227,10 +218,6 @@ ping-devops:
       tag: edge
 
 collections:
-  #solutions:
-  #  sampleCiam:
-  #    name: "Sample CIAM" 
-  #    url: https://www.getpostman.com/collections/4dc617002fcb8c828127
   useCases:
     paAsProxy:
       name: "PA as Proxy"
@@ -254,7 +241,7 @@ collections:
       name: "SCIM v2"
       url: https://www.getpostman.com/collections/8b746e4dc422b1a490a7
     socialConnections:
-      name: "Social Connections - Dev"
+      name: "Social Connections"
       url: https://www.getpostman.com/collections/69ea2f964dcb562299db
     userProfiles: 
       name: "Unified User Profiles"
@@ -267,21 +254,20 @@ collections:
       name: "My Ping"
       url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
     authenticationAuthority:
-      name: "Authentication Authority - Dev"
+      name: "Authentication Authority"
       url: https://www.getpostman.com/collections/d44bd9bcbe599eec80a7
     accessManager:
       name: "Access Manager"
       url: https://www.getpostman.com/collections/934936decf928c0cc792
     multiFactorAuthentication:
-      name: "Multi Factor Service - Dev"
+      name: "Multi Factor Service"
       url: https://www.getpostman.com/collections/8c8a18c411a8222a2469
     risk:
-      name: "Adaptive Authentication - Dev"
+      name: "Adaptive Authentication"
       url: https://www.getpostman.com/collections/c858030284d959de50f7
     verify:
       name: "Identity Verification"
       url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
-  baseline:
     directory:
       name: "Data Store"
       url: https://www.getpostman.com/collections/f59e241da208cb731775

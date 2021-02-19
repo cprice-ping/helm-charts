@@ -50,6 +50,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "decoderUrl",
+                "value": {{ .Values.global.envs.decoderUrl | quote }},
+                "enabled": true
+            },
+            {
                 "key": "pfBaseURL",
                 "value": "https://{{ include "sampleCiam.hostname" . }}",
                 "enabled": true

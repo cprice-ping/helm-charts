@@ -12,7 +12,8 @@ type: application
 # 0.2.0 - Added Use Cases - CIBA \ Access Control \ User Profile
 # 0.2.1 - Added Verify; Added Name Attribute mappings; Updated ping-devops to 0.4.1
 # 0.2.2 - Updated to ping-devops 0.4.3; Added PA Clustering
-version: 0.2.2
+# 0.2.3 - Added `decoderUrl` variable
+version: 0.2.3
 
 # This is the release date of the Stack Collections
 appVersion: 2021-02 
