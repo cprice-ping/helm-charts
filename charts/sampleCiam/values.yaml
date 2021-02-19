@@ -11,7 +11,7 @@ global:
     PING_IDENTITY_PASSWORD: "2FederateM0re"
     ## BaseDN of the datastore
     #USER_BASE_DN: "dc=example.com"
-    decoderUrl: https://decoder.pingidentity.cloud
+    decoderHost: decoder.pingidentity.cloud
 
   # If you'd like to separate the stack from other deployments in your namespace
   # prepend | append | none  
@@ -268,7 +268,7 @@ collections:
     verify:
       name: "Identity Verification"
       url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
-      
+
   baseline:
     directory:
       name: "Data Store"

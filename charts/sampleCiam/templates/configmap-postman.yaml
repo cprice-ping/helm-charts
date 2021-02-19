@@ -51,7 +51,7 @@ data:
             },
             {
                 "key": "decoderUrl",
-                "value": {{ .Values.global.envs.decoderUrl | quote }},
+                "value": {{ .Values.global.envs.decoderHost | quote }},
                 "enabled": true
             },
             {
