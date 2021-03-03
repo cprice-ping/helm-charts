@@ -14,7 +14,8 @@ type: application
 # 0.2.2 - Updated to ping-devops 0.4.3; Added PA Clustering
 # 0.2.3 - Added `decoderUrl` variable
 # 0.2.4 - Updating dependency
-version: 0.2.4
+# 0.2.5 - Adding Ingress route for PF OAuthPlayground
+version: 0.2.5
 
 # This is the release date of the Stack Collections
 appVersion: 2021-02 

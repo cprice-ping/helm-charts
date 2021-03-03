@@ -64,6 +64,11 @@ spec:
         backend:
           serviceName: {{ .Release.Name }}-pingfederate-engine
           servicePort: {{ include "pingports.pfEnginePort" . }}
+      - path: /OAuthPlayground/
+        #pathType: Prefix
+        backend:
+          serviceName: {{ .Release.Name }}-pingfederate-engine
+          servicePort: {{ include "pingports.pfEnginePort" . }}
       # PingDirectory
       # Directory API
       - path: /directory/
