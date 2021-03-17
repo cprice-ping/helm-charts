@@ -15,10 +15,11 @@ type: application
 # 0.2.3 - Added `decoderUrl` variable
 # 0.2.4 - Updating dependency
 # 0.2.5 - Adding Ingress route for PF OAuthPlayground
-version: 0.2.5
+# 0.2.6 - moving to :latest to allow time to resolve new rootless images
+version: 0.2.6
 
 # This is the release date of the Stack Collections
-appVersion: 2021-02 
+appVersion: 2103 
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:

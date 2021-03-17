@@ -20,6 +20,9 @@ PingAccess:    https://{{ include "sampleCiam.paAdminHostname" . }}
 {{- end }}
 {{- if .Values.useCases.delegatedAdministration.enabled }}
 Delegator:     https://{{ include "sampleCiam.hostname" . }}/delegator/
+
+Delegated Administration:
+Documentation can be found at: https://github.com/cprice-ping/Profile-DelAdmin
 {{- end }}
 
 External Hostname:
@@ -40,6 +43,5 @@ Client Secret: {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
 
 {{ if .Values.capabilities.accessManager.enabled -}}
 Access Control Demo:
-https://{{ include "sampleCiam.hostname" . }}/headers
-{{ end -}}
+https://{{ include "sampleCiam.hostname" . }}/headers{{ end -}}
 -----------------------------------

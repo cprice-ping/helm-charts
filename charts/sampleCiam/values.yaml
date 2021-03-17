@@ -130,7 +130,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
     image:
-      tag: edge
+      tag: latest
     logging: INFO
     container:
       replicaCount: 1
@@ -143,7 +143,7 @@ ping-devops:
   pingdataconsole:
     enabled: true
     image:
-      tag: edge
+      tag: latest
 
   pingfederate-admin:
     enabled: true
@@ -152,7 +152,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
     image:
-      tag: edge
+      tag: latest
     logging: INFO
     #ingress:
     #  hosts:
@@ -178,13 +178,13 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
     image:
-      tag: edge
+      tag: latest
     logging: INFO
 
   pingdatasync:
     enabled: true
     image:
-      tag: edge
+      tag: latest
     logging: INFO
 
   pingaccess-admin:
@@ -196,7 +196,7 @@ ping-devops:
     privateCert:
       generate: true
     image:
-      tag: edge
+      tag: latest
     logging: INFO
   
   pingaccess-engine:
@@ -206,7 +206,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
     enabled: false
     image:
-      tag: edge
+      tag: latest
     logging: INFO
 
   pingdelegator:
@@ -215,7 +215,7 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingdelegator
     image:
-      tag: edge
+      tag: latest
 
 collections:
   useCases:
