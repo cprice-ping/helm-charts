@@ -29,9 +29,12 @@ External Hostname:
 {{ include "sampleCiam.hostname" . }}
 
 Authentication Policy Samples:
-{{ if .Values.capabilities.verify.enabled }}SAML (Verify): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-Verify{{ end }}
+{{- if .Values.capabilities.verify.enabled }}SAML (Verify): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-Verify{{ end }}
 SAML (Single_Factor): https://{{ include "sampleCiam.hostname" . }}/idp/startSSO.ping?PartnerSpId=Sample-SAML
 OIDC {{- if .Values.capabilities.multiFactorAuthentication.enabled -}}{{- print " (Multi_Factor):  " -}}{{- else -}}{{- print " (Single_Factor): " -}}{{- end -}}https://{{ include "sampleCiam.hostname" . }}/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://{{ .Values.global.envs.decoderHost }}/oidc&scope=openid%20profile
+
+Profile Management:
+https://{{ include "sampleCiam.hostname" . }}.ping-devops.com/pf/idprofile.ping?LocalIdentityProfileID=regIdentityProfile
 
 Sample Users:
 user.[0-4] | {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
@@ -42,6 +45,7 @@ Client ID:     PingLogon
 Client Secret: {{ .Values.global.envs.PING_IDENTITY_PASSWORD }}
 
 {{ if .Values.capabilities.accessManager.enabled -}}
-Access Control Demo:
-https://{{ include "sampleCiam.hostname" . }}/headers{{ end -}}
+Access Management Demos:
+Server-Side Headers: https://{{ include "sampleCiam.hostname" . }}/headers
+Client-Side SPA:     https://{{ include "sampleCiam.hostname" . }}/spa{{ end }}
 -----------------------------------

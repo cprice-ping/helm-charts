@@ -17,6 +17,9 @@ global:
   # prepend | append | none  
   addReleaseNameToResource: prepend
 
+  image:
+    tag: 2102
+
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
     # kubectl logs -f job/{{release name}}-pingconfig
@@ -129,8 +132,6 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
-    image:
-      tag: latest
     logging: INFO
     container:
       replicaCount: 1
@@ -139,11 +140,15 @@ ping-devops:
         dataService: true
         servicePort: 2443
         containerPort: 2443
+    # workload:
+    #   securityContext:
+    #     runAsUser: 9031
+    #     runAsGroup: 9999
+    #     runAsNonRoot: true
+    #     fsGroup: 9999
   
   pingdataconsole:
     enabled: true
-    image:
-      tag: latest
 
   pingfederate-admin:
     enabled: true
@@ -151,8 +156,6 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
-    image:
-      tag: latest
     logging: INFO
     #ingress:
     #  hosts:
@@ -160,7 +163,7 @@ ping-devops:
     #      paths:
     #      - path: /
     #        backend:
-    #          serviceName: https 
+    #          serviceName: https
     services:
       # Allows OIDC callbacks to PF through the GSA Ingress
       # Comment out `admin` section to default to :9999
@@ -169,6 +172,9 @@ ping-devops:
         containerPort: 443
     workload:
       type: "StatefulSet"
+      #securityContext:
+      #  runAsNonRoot: false
+      #  runAsUser: 0
 
   pingfederate-engine:
     enabled: true
@@ -177,14 +183,10 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
-    image:
-      tag: latest
     logging: INFO
 
   pingdatasync:
     enabled: true
-    image:
-      tag: latest
     logging: INFO
 
   pingaccess-admin:
@@ -195,8 +197,6 @@ ping-devops:
     enabled: false
     privateCert:
       generate: true
-    image:
-      tag: latest
     logging: INFO
   
   pingaccess-engine:
@@ -205,8 +205,6 @@ ping-devops:
       SERVER_PROFILE_PATH: pingaccess
       SERVER_PROFILE_BRANCH: main
     enabled: false
-    image:
-      tag: latest
     logging: INFO
 
   pingdelegator:
@@ -214,8 +212,12 @@ ping-devops:
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingdelegator
-    image:
-      tag: latest
+    #workload:
+    #  securityContext:
+    #    runAsUser: 100
+    #    runAsGroup: 100
+    #    runAsNonRoot: true
+    #    fsGroup: 100
 
 collections:
   useCases:

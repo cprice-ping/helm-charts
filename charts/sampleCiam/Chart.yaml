@@ -16,7 +16,8 @@ type: application
 # 0.2.4 - Updating dependency
 # 0.2.5 - Adding Ingress route for PF OAuthPlayground
 # 0.2.6 - moving to :latest to allow time to resolve new rootless images
-version: 0.2.6
+# 0.2.7 - Moving back to specific release - 2102 Updating ping-devops chart to 0.5.1 - Updated Notes.txt
+version: 0.2.7
 
 # This is the release date of the Stack Collections
 appVersion: 2103 
@@ -24,5 +25,5 @@ appVersion: 2103
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.4.6
+  version: 0.5.1
   repository: https://helm.pingidentity.com
