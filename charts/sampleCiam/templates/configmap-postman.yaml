@@ -44,6 +44,21 @@ data:
                 "value": "{{ include "sampleCiam.pdAdminServiceName" . }}",
                 "enabled": true
             },
+                        {
+                "key": "pdLdapsPort",
+                "value": "{{ include "pingports.pdLdapsPort" . }}",
+                "enabled": true
+            },
+            {
+                "key": "pdApiPort",
+                "value": "{{ include "pingports.pdApiPort" . }}",
+                "enabled": true
+            },
+            {
+                "key": "pazAdminURL",
+                "value": "https://{{ include "sampleCiam.pazAdminServiceName" . }}:{{ include "pingports.pazConfigPort" . }}",
+                "enabled": true
+            },
             {
                 "key": "pfAdminURL",
                 "value": "https://{{ include "sampleCiam.pfAdminServiceName" . }}:{{ include "pingports.pfAdminPort" . }}",
@@ -117,6 +132,11 @@ data:
             {
                 "key": "pdConsoleURL",
                 "value": "https://{{ include "sampleCiam.pdAdminHostname" . }}", 
+                "enabled": true
+            },
+            {
+                "key": "pazConsoleURL",
+                "value": "https://{{ include "sampleCiam.pazAdminHostname" . }}", 
                 "enabled": true
             },
             {

@@ -54,6 +54,11 @@
     {{- print (index .Values "ping-devops" "pingaccess-engine" ).services.https.servicePort }}
 {{- end }}
 
+{{/* PingAuthorize ConfigAPI */}}
+{{- define "pingports.pazConfigPort" -}}
+    {{- print (index .Values "ping-devops").pingdatagovernance.services.https.servicePort }}
+{{- end }}
+
 {{/* PingCentral Admin */}}
 {{- define "pingports.pcAdminPort" -}}
     {{- print 9022 }} 

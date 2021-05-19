@@ -17,8 +17,9 @@ global:
   # prepend | append | none  
   addReleaseNameToResource: prepend
 
+  # Product Image version tag
   image:
-    tag: 2102
+    tag: 2104
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -40,7 +41,7 @@ global:
 # PingOne Service Details
 pingOne:
   # Set to `true` if you are supplying your PingOne details 
-  # C360 leverages PingOne MFA by default
+  # Facile leverages PingOne MFA by default
   usePingOneServices: true
   # This configures the proper endpoints for My Ping and PingOne Service IKs
   # PingOne Regions - "NA" | "EU" | "AP"
@@ -77,6 +78,8 @@ capabilities:
   risk:
     enabled: false
   verify:
+    enabled: false
+  authorize:
     enabled: false
 
 baseline:
@@ -156,6 +159,8 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
+    image:
+      tag: 2102
     logging: INFO
     #ingress:
     #  hosts:
@@ -183,6 +188,8 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
       PF_ADMIN_PORT: "443"
+    image:
+      tag: 2102
     logging: INFO
 
   pingdatasync:
@@ -218,6 +225,44 @@ ping-devops:
     #    runAsGroup: 100
     #    runAsNonRoot: true
     #    fsGroup: 100
+
+  pingdatagovernance:
+    enabled: false
+    envs:
+      # SERVER_PROFILE_PDG_PATH: baseline/pingdatagovernance
+      # SERVER_PROFILE_PARENT: PDG
+      # SERVER_PROFILE_PDG_URL: https://github.com/pingidentity/pingidentity-server-profiles.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_PATH: pingauthorize
+    image:
+      repository: pingidentity
+      name: pingauthorize
+      pullPolicy: IfNotPresent
+    probes:
+      liveness:
+        command: /opt/liveness.sh
+        initialDelaySeconds: 120
+        periodSeconds: 30
+        timeoutSeconds: 5
+        successThreshold: 1
+        failureThreshold: 4
+      readiness:
+        command: /opt/liveness.sh
+        initialDelaySeconds: 30
+        periodSeconds: 5
+        timeoutSeconds: 5
+        successThreshold: 1
+        failureThreshold: 4
+
+  pingdatagovernancepap:
+    enabled: false
+    envs:
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_PATH: pingauthorizepap
+    image:
+      repository: pingidentity
+      name: pingauthorizepap
+      pullPolicy: IfNotPresent
 
 collections:
   useCases:
@@ -270,7 +315,9 @@ collections:
     verify:
       name: "Identity Verification"
       url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
-
+    authorize:
+      name: "Dynamic Authorization"
+      url: https://www.getpostman.com/collections/852ab959a953e607b22b
   baseline:
     directory:
       name: "Data Store"
