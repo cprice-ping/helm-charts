@@ -59,6 +59,11 @@
     {{- print (index .Values "ping-devops").pingdatagovernance.services.https.servicePort }}
 {{- end }}
 
+{{/* PingAuthorizePAP API */}}
+{{- define "pingports.papAdminPort" -}}
+    {{- print (index .Values "ping-devops").pingdatagovernancepap.services.https.servicePort }}
+{{- end }}
+
 {{/* PingCentral Admin */}}
 {{- define "pingports.pcAdminPort" -}}
     {{- print 9022 }} 

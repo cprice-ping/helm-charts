@@ -66,6 +66,10 @@
     {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingdatagovernance" ) .Values.global)) }}
 {{- end }}
 
+{{- define "sampleCiam.papServiceName" -}}
+    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingdatagovernancepap" ) .Values.global)) }}
+{{- end }}
+
 {{- define "sampleCiam.pfAdminHostname" -}}
     {{ if eq .Values.global.ingress.addReleaseNameToHost "append" }}
         {{- print "pingfederate-admin-" .Release.Name "." .Values.global.ingress.defaultDomain }}

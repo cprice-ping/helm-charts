@@ -140,6 +140,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "pazAdminServiceURL",
+                "value": "https://{{ include "sampleCiam.papServiceName" . }}:{{ include "pingports.papAdminPort" . }}", 
+                "enabled": true
+            },
+            {
                 "key": "paConsoleURL",
                 "value": "https://{{ include "sampleCiam.paAdminHostname" . }}", 
                 "enabled": true

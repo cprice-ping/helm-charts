@@ -1,6 +1,6 @@
 apiVersion: v2
 name: ping-sample-ciam
-description: A chart to deploy a Sample CIAM config using Ping Software \ Services
+description: A chart to deploy a Sample CIAM config using Project Facile
 
 type: application
 
@@ -17,8 +17,8 @@ type: application
 # 0.2.5 - Adding Ingress route for PF OAuthPlayground
 # 0.2.6 - moving to :latest to allow time to resolve new rootless images
 # 0.2.7 - Moving back to specific release - 2102 Updating ping-devops chart to 0.5.1 - Updated Notes.txt
-# 0.2.8 - Bumping dependency to 0.6.0 \ Added PAZ \ Updated to 2104 - non-root (except PF)
-version: 0.2.8-beta
+# 0.2.8 - Bumping dependency to 0.6.2 \ Added PAZ \ Updated to 2104 - non-root (except PF)
+version: 0.2.8
 
 # This is the Product Image versions this chart passes to `ping-devops`
 appVersion: 2104
@@ -26,5 +26,5 @@ appVersion: 2104
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.6.0
+  version: 0.6.2
   repository: https://helm.pingidentity.com
