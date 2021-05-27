@@ -34,3 +34,7 @@ data:
   PD_ENGINE_PUBLIC_PORT: "443"
   PD_DELEGATOR_PROFILE_SCOPE_ENABLED: "true"
   {{- end }}
+  {{- if .Values.capabilities.authorize.enabled }}
+  PING_OIDC_CONFIGURATION_ENDPOINT: {{ include "sampleCiam.pingOneAdminUrl" . | quote }}
+  PING_CLIENT_ID: {{ .Values.pingOne.administration.pazLogonApp.id | quote }}
+  {{- end }}

@@ -18,7 +18,8 @@ type: application
 # 0.2.6 - moving to :latest to allow time to resolve new rootless images
 # 0.2.7 - Moving back to specific release - 2102 Updating ping-devops chart to 0.5.1 - Updated Notes.txt
 # 0.2.8 - Bumping dependency to 0.6.2 \ Added PAZ \ Updated to 2104 - non-root (except PF)
-version: 0.2.8
+# 0.2.9 - Adding PAP SSO pieces (configmap-env-vars)
+version: 0.2.9
 
 # This is the Product Image versions this chart passes to `ping-devops`
 appVersion: 2104

@@ -145,6 +145,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "pazLogonAppId",
+                "value": {{ .Values.pingOne.administration.pazLogonApp.id | quote }},
+                "enabled": true
+            },
+            {
                 "key": "paConsoleURL",
                 "value": "https://{{ include "sampleCiam.paAdminHostname" . }}", 
                 "enabled": true
