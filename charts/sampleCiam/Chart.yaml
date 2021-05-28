@@ -20,7 +20,8 @@ type: application
 # 0.2.8 - Bumping dependency to 0.6.2 \ Added PAZ \ Updated to 2104 - non-root (except PF)
 # 0.2.9 - Adding PAP SSO pieces (configmap-env-vars)
 # 0.2.10 - Removed PAP SSO vars - it breaks the Policy injection
-version: 0.2.10
+# 0.2.11 - Updating the Liveness check for PAZ
+version: 0.2.11
 
 # This is the Product Image versions this chart passes to `ping-devops`
 appVersion: 2104
