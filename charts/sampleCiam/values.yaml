@@ -233,7 +233,6 @@ ping-devops:
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
       SERVER_PROFILE_PATH: pingauthorize
-      MAX_HEAP_SIZE: 1g
     image:
       repository: pingidentity
       name: pingauthorize
@@ -241,7 +240,7 @@ ping-devops:
     probes:
       liveness:
         command: /opt/liveness.sh
-        initialDelaySeconds: 120
+        initialDelaySeconds: 300
         periodSeconds: 30
         timeoutSeconds: 5
         successThreshold: 1
