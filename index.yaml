@@ -3,7 +3,21 @@ entries:
   ping-sample-ciam:
   - apiVersion: v2
     appVersion: "2104"
-    created: "2021-05-27T14:22:15.243311-07:00"
+    created: "2021-05-28T09:33:12.254783-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.6.2
+    description: A chart to deploy a Sample CIAM config using Project Facile
+    digest: 9eb6c1de77dcbb5a7eddead4b6e1f2b75c473153235ef297a2ce97a4ad1b487f
+    name: ping-sample-ciam
+    type: application
+    urls:
+    - ping-sample-ciam-0.2.10.tgz
+    version: 0.2.10
+  - apiVersion: v2
+    appVersion: "2104"
+    created: "2021-05-28T09:33:12.33646-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -17,7 +31,7 @@ entries:
     version: 0.2.9
   - apiVersion: v2
     appVersion: "2104"
-    created: "2021-05-27T14:22:15.238258-07:00"
+    created: "2021-05-28T09:33:12.328812-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -31,7 +45,7 @@ entries:
     version: 0.2.8
   - apiVersion: v2
     appVersion: "2103"
-    created: "2021-05-27T14:22:15.232358-07:00"
+    created: "2021-05-28T09:33:12.32108-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -45,7 +59,7 @@ entries:
     version: 0.2.7
   - apiVersion: v2
     appVersion: "2103"
-    created: "2021-05-27T14:22:15.225667-07:00"
+    created: "2021-05-28T09:33:12.315097-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -59,7 +73,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: 2021-02
-    created: "2021-05-27T14:22:15.220329-07:00"
+    created: "2021-05-28T09:33:12.308127-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -73,7 +87,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 2021-02
-    created: "2021-05-27T14:22:15.214458-07:00"
+    created: "2021-05-28T09:33:12.301858-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -87,7 +101,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 2021-02
-    created: "2021-05-27T14:22:15.207817-07:00"
+    created: "2021-05-28T09:33:12.295607-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -101,7 +115,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 2021-02
-    created: "2021-05-27T14:22:15.201965-07:00"
+    created: "2021-05-28T09:33:12.287116-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -115,7 +129,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 2021-02
-    created: "2021-05-27T14:22:15.19592-07:00"
+    created: "2021-05-28T09:33:12.249085-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -129,7 +143,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 2020-12
-    created: "2021-05-27T14:22:15.188824-07:00"
+    created: "2021-05-28T09:33:12.217311-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -141,4 +155,4 @@ entries:
     urls:
     - ping-sample-ciam-0.2.0.tgz
     version: 0.2.0
-generated: "2021-05-27T14:22:15.18316-07:00"
+generated: "2021-05-28T09:33:12.186315-07:00"
