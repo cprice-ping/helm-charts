@@ -3,8 +3,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   labels:
-    app.kubernetes.io/name: {{ include "sampleCiam.name" . }}
-    helm.sh/chart: {{ include "sampleCiam.chart" . }}
+    app.kubernetes.io/name: {{ include "facile.name" . }}
+    helm.sh/chart: {{ include "facile.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ .Release.Name }}-pingconfig
@@ -14,7 +14,7 @@ spec:
       containers:
       - env:
         - name: COLLECTIONS
-          value: {{ include "sampleCiam.addCapabilityURLs" . }}{{ include "sampleCiam.useCaseUrls" . }},{{ .Values.collections.baseline.riskDashboard.url }}
+          value: {{ include "facile.addCapabilityURLs" . }}{{ include "facile.useCaseUrls" . }},{{ .Values.collections.baseline.riskDashboard.url }}
         image: pricecs/pingconfigurator:latest
         imagePullPolicy: "Always"
         name: pingconfig

@@ -1,16 +1,16 @@
 # helm upgrade --install {{release-name}} -f ./values.yaml
 
-# Default values for Sample CIAM chart.
+# Default values for Project Facile chart.
 global:
   # Your specific environment variables - values are injected into Server Profiles
   envs:
     # Ping Global Values
     # Named used in labels in PingOne and Ping Software
-    ENVIRONMENT_NAME: "Sample-CIAM"
+    ENVIRONMENT_NAME: "Facile"
     # Default Administrative Password - also passed to APIs as {{globalPwd}}
     PING_IDENTITY_PASSWORD: "2FederateM0re"
     ## BaseDN of the datastore
-    #USER_BASE_DN: "dc=example.com"
+    USER_BASE_DN: dc=facile.com
     decoderHost: decoder.pingidentity.cloud
 
   # If you'd like to separate the stack from other deployments in your namespace
@@ -19,7 +19,7 @@ global:
 
   # Product Image version tag
   image:
-    tag: 2104
+    tag: 2106
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -133,9 +133,10 @@ ping-devops:
   pingdirectory:
     enabled: true
     envs: 
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
+      TAIL_LOG_FILES: /opt/out/instance/logs/access /opt/out/instance/logs/errors /opt/out/instance/logs/failed-ops /opt/out/instance/logs/config-audit.log /opt/out/instance/logs/tools/dsjavaproperties.log /opt/out/instance/logs/tools/export-ldif.log /opt/out/instance/logs/tools/export-ldif.log.previous /opt/out/instance/logs/tools/install-ds.log /opt/out/instance/logs/tools/manage-profile.log /opt/out/instance/logs/tools/manage-profile.log.previous /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/server/logs/tools/status.log /opt/server/logs/tools/tool-invocation.log /opt/server/logs/tools/debug-trace
     logging: INFO
     container:
       replicaCount: 1
@@ -144,12 +145,6 @@ ping-devops:
         dataService: true
         servicePort: 2443
         containerPort: 2443
-    # workload:
-    #   securityContext:
-    #     runAsUser: 9031
-    #     runAsGroup: 9999
-    #     runAsNonRoot: true
-    #     fsGroup: 9999
   
   pingdataconsole:
     enabled: true
@@ -157,18 +152,21 @@ ping-devops:
   pingfederate-admin:
     enabled: true
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
+      PF_LOG_LEVEL: DEBUG
     logging: INFO
+    workload:
+      type: StatefulSet
 
   pingfederate-engine:
     enabled: true
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
-      PF_ADMIN_PORT: "443"
+      PF_LOG_LEVEL: DEBUG
     logging: INFO
 
   pingdatasync:
@@ -177,7 +175,7 @@ ping-devops:
 
   pingaccess-admin:
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingaccess
       SERVER_PROFILE_BRANCH: main
     enabled: false
@@ -187,52 +185,35 @@ ping-devops:
   
   pingaccess-engine:
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingaccess
       SERVER_PROFILE_BRANCH: main
+      PA_LOG_LEVEL: DEBUG
     enabled: false
     logging: INFO
 
   pingdelegator:
     enabled: false
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdelegator
+      SERVER_PROFILE_BRANCH: main
 
-  pingdatagovernance:
+  pingauthorize:
     enabled: false
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingauthorize
-    image:
-      repository: pingidentity
-      name: pingauthorize
-      pullPolicy: IfNotPresent
-    probes:
-      liveness:
-        command: /opt/liveness.sh
-        initialDelaySeconds: 300
-        periodSeconds: 30
-        timeoutSeconds: 5
-        successThreshold: 1
-        failureThreshold: 4
-      readiness:
-        command: /opt/liveness.sh
-        initialDelaySeconds: 30
-        periodSeconds: 5
-        timeoutSeconds: 5
-        successThreshold: 1
-        failureThreshold: 4
+      SERVER_PROFILE_BRANCH: main
+      TAIL_LOG_FILES: /opt/out/instance/logs/trace /opt/out/instance/logs/policy-decision /opt/out/instance/logs/ldap-access /opt/out/instance/logs/debug-trace
 
-  pingdatagovernancepap:
+  pingauthorizepap:
     enabled: false
     envs:
-      SERVER_PROFILE_URL: https://github.com/cprice-ping/Sample-CIAM.git
+      SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingauthorizepap
-    image:
-      repository: pingidentity
-      name: pingauthorizepap
-      pullPolicy: IfNotPresent
+      SERVER_PROFILE_BRANCH: main
+      TAIL_LOG_FILES: /opt/out/instance/logs/pingauthorize-pap.log /opt/out/instance/logs/setup.log /opt/out/instance/logs/start-server.log /opt/out/instance/logs/stop-server.log /opt/out/instance/logs/decision-audit.log
 
 collections:
   useCases:

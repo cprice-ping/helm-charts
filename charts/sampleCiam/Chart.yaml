@@ -21,7 +21,8 @@ type: application
 # 0.2.9 - Adding PAP SSO pieces (configmap-env-vars)
 # 0.2.10 - Removed PAP SSO vars - it breaks the Policy injection
 # 0.2.11 - Updating the Liveness check for PAZ
-version: 0.2.11
+# 0.3.0 - Updating all Products to June 2021 releases
+version: 0.3.0
 
 # This is the Product Image versions this chart passes to `ping-devops`
 appVersion: 2104
