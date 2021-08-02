@@ -30,6 +30,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "ipAddress",
+                "value": {{ .Values.global.envs.IP_ADDRESS | quote }},
+                "enabled": true
+            },
+            {
                 "key": "pdAdminUrl",
                 "value": "https://{{ include "facile.pdAdminServiceName" . }}:{{ include "pingports.pdConfigPort" . }}",
                 "enabled": true
@@ -44,7 +49,7 @@ data:
                 "value": "{{ include "facile.pdAdminServiceName" . }}",
                 "enabled": true
             },
-                        {
+            {
                 "key": "pdLdapsPort",
                 "value": "{{ include "pingports.pdLdapsPort" . }}",
                 "enabled": true

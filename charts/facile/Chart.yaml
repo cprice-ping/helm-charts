@@ -6,9 +6,10 @@ type: application
 
 # This is the chart version. This version number should be incremented each time you make changes
 # 0.3.0 - Rebranding to Facile. Updating all Products to June 2021 releases; Shifted to Facile Repo URL
-version: 0.3.0
+# 0.3.1 - Added IP_ADDRESS to Postman configMap -- used to pre-populate the P1 Risk policy
+version: 0.3.1
 
-# This is the Product Image versions this chart passes to `ping-devops`
+# This matches the Product Image versions the chart passes to `ping-devops`
 appVersion: 2106
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
