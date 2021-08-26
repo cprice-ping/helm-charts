@@ -7,13 +7,14 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # 0.3.0 - Rebranding to Facile. Updating all Products to June 2021 releases; Shifted to Facile Repo URL
 # 0.3.1 - Added IP_ADDRESS to Postman configMap -- used to pre-populate the P1 Risk policy
-version: 0.3.1
+# 0.3.2 - Resolve issue with AP deployments \ Bumped to 2107 images
+version: 0.3.2
 
 # This matches the Product Image versions the chart passes to `ping-devops`
-appVersion: 2106
+appVersion: 2107
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.6.7
+  version: 0.7.3
   repository: https://helm.pingidentity.com
