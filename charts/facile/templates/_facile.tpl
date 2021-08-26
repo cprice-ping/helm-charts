@@ -16,7 +16,7 @@
     {{ if .Values.pingOne.usePingOneServices }}
         {{- if eq ( default "NA" .Values.pingOne.envRegion ) "EU" }}
             {{- print "eu" }}
-        {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "AP" }}
+        {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "ASIA" }}
             {{- print "asia" }}
         {{- else }}
             {{- print "na" }}
