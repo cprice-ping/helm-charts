@@ -18,8 +18,8 @@ global:
   addReleaseNameToResource: prepend
 
   # Product Image version tag
-  image:
-    tag: 2107
+  # image:
+  #   tag: 2107
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -136,7 +136,7 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
-      TAIL_LOG_FILES: /opt/out/instance/logs/access /opt/out/instance/logs/errors /opt/out/instance/logs/failed-ops /opt/out/instance/logs/config-audit.log /opt/out/instance/logs/tools/dsjavaproperties.log /opt/out/instance/logs/tools/export-ldif.log /opt/out/instance/logs/tools/export-ldif.log.previous /opt/out/instance/logs/tools/install-ds.log /opt/out/instance/logs/tools/manage-profile.log /opt/out/instance/logs/tools/manage-profile.log.previous /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/server/logs/tools/status.log /opt/server/logs/tools/tool-invocation.log /opt/server/logs/tools/debug-trace
+      TAIL_LOG_FILES: /opt/out/instance/logs/access /opt/out/instance/logs/errors /opt/out/instance/logs/failed-ops /opt/out/instance/logs/config-audit.log /opt/out/instance/logs/tools/dsjavaproperties.log /opt/out/instance/logs/tools/export-ldif.log /opt/out/instance/logs/tools/export-ldif.log.previous /opt/out/instance/logs/tools/install-ds.log /opt/out/instance/logs/tools/manage-profile.log /opt/out/instance/logs/tools/manage-profile.log.previous /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/server/logs/tools/status.log /opt/server/logs/tools/tool-invocation.log /opt/server/logs/debug-trace
     logging: INFO
     container:
       replicaCount: 1

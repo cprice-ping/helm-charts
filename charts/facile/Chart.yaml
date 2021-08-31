@@ -1,6 +1,6 @@
 apiVersion: v2
 name: ping-facile
-description: A chart to deploy a sample CIAM config using Project Facile
+description: A chart to deploy a CIAM config using Project Facile
 
 type: application
 
@@ -8,13 +8,14 @@ type: application
 # 0.3.0 - Rebranding to Facile. Updating all Products to June 2021 releases; Shifted to Facile Repo URL
 # 0.3.1 - Added IP_ADDRESS to Postman configMap -- used to pre-populate the P1 Risk policy
 # 0.3.2 - Resolve issue with AP deployments \ Bumped to 2107 images
-version: 0.3.2
+# 0.3.3 - Resolve issue PD `debug-trace` logger \ Updated to `ping-devops` 0.7.5 \ Bumped to 2108 images
+version: 0.3.3
 
-# This matches the Product Image versions the chart passes to `ping-devops`
-appVersion: 2107
+# This matches the version of `ping-devops` this chart depends on 
+appVersion: 0.7.5
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.7.3
+  version: 0.7.5
   repository: https://helm.pingidentity.com
