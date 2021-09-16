@@ -9,7 +9,7 @@ type: application
 # 0.3.1 - Added IP_ADDRESS to Postman configMap -- used to pre-populate the P1 Risk policy
 # 0.3.2 - Resolve issue with AP deployments \ Bumped to 2107 images
 # 0.3.3 - Resolve issue PD `debug-trace` logger \ Updated to `ping-devops` 0.7.5 \ Bumped to 2108 images
-# 0.3.4 - Moved PingData containers to 9.0.0.0-EA-edge
+# 0.3.4 - Moved PingData containers to 9.0.0.0-EA-edge \ moved Ingress version to `v1`
 version: 0.3.4
 
 # This matches the version of `ping-devops` this chart depends on 
