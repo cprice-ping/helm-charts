@@ -3,7 +3,21 @@ entries:
   ping-facile:
   - apiVersion: v2
     appVersion: 0.7.5
-    created: "2021-08-31T13:26:01.866759-07:00"
+    created: "2021-09-16T14:23:36.01543-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.7.5
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: 25cf5a4c4088c4d381a80cb1dea380091d88af5dc7e3557933659e1613716b15
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v2
+    appVersion: 0.7.5
+    created: "2021-09-16T14:23:36.006211-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -17,7 +31,7 @@ entries:
     version: 0.3.3
   - apiVersion: v2
     appVersion: "2107"
-    created: "2021-08-31T13:26:01.858179-07:00"
+    created: "2021-09-16T14:23:35.978351-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -31,7 +45,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: "2106"
-    created: "2021-08-31T13:26:01.837253-07:00"
+    created: "2021-09-16T14:23:35.971374-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -45,7 +59,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: "2106"
-    created: "2021-08-31T13:26:01.828374-07:00"
+    created: "2021-09-16T14:23:35.96306-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -60,7 +74,7 @@ entries:
   ping-sample-ciam:
   - apiVersion: v2
     appVersion: "2104"
-    created: "2021-08-31T13:26:01.87375-07:00"
+    created: "2021-09-16T14:23:36.023056-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -72,4 +86,4 @@ entries:
     urls:
     - ping-sample-ciam-0.2.11.tgz
     version: 0.2.11
-generated: "2021-08-31T13:26:01.820341-07:00"
+generated: "2021-09-16T14:23:35.95497-07:00"
