@@ -1,0 +1,31 @@
+{{- if .Values.usePingConfig.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    labels:
+        app.kubernetes.io/name: {{ include "facile.name" . }}
+        helm.sh/chart: {{ include "facile.chart" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+    name: {{ .Release.Name }}-p1ldapgateway
+spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: pingone-ldap-gateway
+    template:
+        metadata:
+          labels:
+            app: pingone-ldap-gateway
+        spec:
+            containers:
+                - name: pingone-ldap-gateway
+                  image: gcr.io/ping-identity/pingone/pingone-ldap-gateway
+                  imagePullPolicy: "IfNotPresent"
+                  env:
+                    - name: PING_IDENTITY_ACCEPT_EULA
+                      value: "yes"
+                    - name: gatewayCredential
+                      value: ""
+status: {}
+{{- end -}}

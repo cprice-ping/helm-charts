@@ -18,8 +18,8 @@ global:
   addReleaseNameToResource: prepend
 
   # Product Image version tag
-  # image:
-  #   tag: 2107
+  image:
+    tag: 2110
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig

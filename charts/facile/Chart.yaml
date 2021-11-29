@@ -10,13 +10,14 @@ type: application
 # 0.3.2 - Resolve issue with AP deployments \ Bumped to 2107 images
 # 0.3.3 - Resolve issue PD `debug-trace` logger \ Updated to `ping-devops` 0.7.5 \ Bumped to 2108 images
 # 0.3.4 - Moved PingData containers to 9.0.0.0-EA-edge
-version: 0.3.4
+# 0.3.5 - Added Pod for P1 LDAP Gateway \ Bumped to `ping-devops` 0.7.8
+version: 0.3.5
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.7.5
+appVersion: 0.7.8
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.7.5
+  version: 0.7.8
   repository: https://helm.pingidentity.com
