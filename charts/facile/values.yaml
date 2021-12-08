@@ -137,8 +137,6 @@ ping-devops:
       SERVER_PROFILE_PATH: pingdirectory
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/access /opt/out/instance/logs/errors /opt/out/instance/logs/failed-ops /opt/out/instance/logs/config-audit.log /opt/out/instance/logs/tools/dsjavaproperties.log /opt/out/instance/logs/tools/export-ldif.log /opt/out/instance/logs/tools/export-ldif.log.previous /opt/out/instance/logs/tools/install-ds.log /opt/out/instance/logs/tools/manage-profile.log /opt/out/instance/logs/tools/manage-profile.log.previous /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/out/instance/logs/debug-trace
-    image:
-      tag: 9.0.0.0-EA-edge 
     logging: INFO
     container:
       replicaCount: 1
@@ -150,8 +148,6 @@ ping-devops:
   
   pingdataconsole:
     enabled: true
-    image:
-      tag: 9.0.0.0-EA-edge 
 
   pingfederate-admin:
     enabled: true
@@ -176,8 +172,6 @@ ping-devops:
   pingdatasync:
     enabled: true
     image:
-      tag: 9.0.0.0-EA-edge 
-    logging: INFO
 
   pingaccess-admin:
     envs:
@@ -204,8 +198,6 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdelegator
       SERVER_PROFILE_BRANCH: main
-    image:
-      tag: 4.7.0-edge
        
   pingauthorize:
     enabled: false
