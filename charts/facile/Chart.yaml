@@ -12,7 +12,8 @@ type: application
 # 0.3.4 - Moved PingData containers to 9.0.0.0-EA-edge
 # 0.3.5 - Added Pod for P1 LDAP Gateway \ Bumped to `ping-devops` 0.7.8
 # 0.3.6 - Bumped to 2111 & 0.8.1 \ Removed image override for PD | PDS | Console 
-version: 0.3.6
+# 0.3.7 - Added Vars to disable log4j2 message resolution
+version: 0.3.7
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.8.1

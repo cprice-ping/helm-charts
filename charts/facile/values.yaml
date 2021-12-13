@@ -156,6 +156,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
       PF_LOG_LEVEL: DEBUG
+      JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     logging: INFO
     workload:
       type: StatefulSet
@@ -167,6 +168,8 @@ ping-devops:
       SERVER_PROFILE_PATH: pingfederate
       SERVER_PROFILE_BRANCH: main
       PF_LOG_LEVEL: DEBUG
+      JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
+      TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
     logging: INFO
 
   pingdatasync:
@@ -178,6 +181,7 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingaccess
       SERVER_PROFILE_BRANCH: main
+      JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     privateCert:
       generate: true
@@ -189,6 +193,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingaccess
       SERVER_PROFILE_BRANCH: main
       PA_LOG_LEVEL: DEBUG
+      JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
 
