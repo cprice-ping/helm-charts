@@ -19,7 +19,7 @@ global:
 
   # Product Image version tag
   image:
-    tag: edge
+    tag: 2111
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
