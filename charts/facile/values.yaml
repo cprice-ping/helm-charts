@@ -160,9 +160,8 @@ ping-devops:
     logging: INFO
     workload:
       type: StatefulSet
-    container:
-      imagePullPolicy: Always
-
+    image:
+      tag: 11.0.0-edge
   pingfederate-engine:
     enabled: true
     envs:
@@ -173,8 +172,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
       TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
     logging: INFO
-    container:
-      imagePullPolicy: Always
+    image:
+      tag: 11.0.0-edge
 
   pingdatasync:
     enabled: true
@@ -190,8 +189,8 @@ ping-devops:
     privateCert:
       generate: true
     logging: INFO
-    container:
-      imagePullPolicy: Always
+    image:
+      tag: 7.0.0-edge
   
   pingaccess-engine:
     envs:
@@ -202,8 +201,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
-    container:
-      imagePullPolicy: Always
+    image:
+      tag: 7.0.0-edge
 
   pingdelegator:
     enabled: false
