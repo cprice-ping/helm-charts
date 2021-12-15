@@ -160,6 +160,8 @@ ping-devops:
     logging: INFO
     workload:
       type: StatefulSet
+    image:
+      imagePullPolicy: Always
 
   pingfederate-engine:
     enabled: true
@@ -171,6 +173,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
       TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
     logging: INFO
+    image:
+      imagePullPolicy: Always
 
   pingdatasync:
     enabled: true
@@ -186,6 +190,8 @@ ping-devops:
     privateCert:
       generate: true
     logging: INFO
+    image:
+      imagePullPolicy: Always
   
   pingaccess-engine:
     envs:
@@ -196,6 +202,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
+    image:
+      imagePullPolicy: Always
 
   pingdelegator:
     enabled: false

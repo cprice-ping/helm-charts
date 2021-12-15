@@ -14,8 +14,9 @@ type: application
 # 0.3.6 - Bumped to 2111 & 0.8.1 \ Removed image override for PD | PDS | Console 
 # 0.3.7 - Added Vars to disable log4j2 message resolution
 # 0.3.8 - Bumped to image to `edge` for log4j fixes
+# 0.3.9 - Added `imagePullPolicy: Always` to get latest into deployment
 
-version: 0.3.8
+version: 0.3.9
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.8.1
