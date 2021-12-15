@@ -13,7 +13,9 @@ type: application
 # 0.3.5 - Added Pod for P1 LDAP Gateway \ Bumped to `ping-devops` 0.7.8
 # 0.3.6 - Bumped to 2111 & 0.8.1 \ Removed image override for PD | PDS | Console 
 # 0.3.7 - Added Vars to disable log4j2 message resolution
-version: 0.3.7
+# 0.3.8 - Bumped to image to `edge` for log4j fixes
+
+version: 0.3.8
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.8.1
