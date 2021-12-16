@@ -190,7 +190,7 @@ ping-devops:
       generate: true
     logging: INFO
     image:
-      tag: 7.0.0-edge
+      tag: 7.0.1-edge
   
   pingaccess-engine:
     envs:
