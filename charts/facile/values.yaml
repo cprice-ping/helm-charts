@@ -208,7 +208,7 @@ ping-devops:
     enabled: false
     logging: INFO
     image:
-      tag: 7.0.0-edge
+      tag: 7.0.1-edge
 
   pingdelegator:
     enabled: false
