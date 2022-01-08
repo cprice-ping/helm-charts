@@ -31,7 +31,7 @@ spec:
                       value: "yes"
                     - name: PING_INTELLIGENCE_GATEWAY_CREDENTIALS
                       value: {{ .Values.pingOne.gateways.piAse.credential | trim | quote }}
-                    - name: ENABLE_ABS_PUBLISH
+                    - name: PING_INTELLIGENCE_ASE_ENABLE_ABS_PUBLISH
                       value: "true"
                   volumeMounts:
                     - mountPath: /dev/shm
