@@ -16,8 +16,9 @@ type: application
 # 0.3.8 - Bumped to image to `edge` for log4j fixes
 # 0.3.9 - Added `imagePullPolicy: Always` to get latest into deployment
 # 0.3.10 - PingData product moved to 9.0 GA
+# 0.3.11 - Added PI ASE
 
-version: 0.3.10
+version: 0.3.11
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.8.1

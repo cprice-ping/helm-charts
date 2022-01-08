@@ -239,6 +239,10 @@ ping-devops:
     image:
       tag: 9.0.0.0-edge
 
+  pingIntelligence:
+    image:
+      tag: 5.1-edge
+
 collections:
   useCases:
     paAsProxy:
