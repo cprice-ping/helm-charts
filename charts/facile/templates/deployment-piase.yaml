@@ -32,7 +32,7 @@ spec:
                     - name: PING_INTELLIGENCE_GATEWAY_CREDENTIALS
                       value: {{ .Values.pingOne.gateways.piAse.credential | trim | quote }}
                     - name: PING_INTELLIGENCE_ASE_ENABLE_ABS_PUBLISH
-                      value: "true"
+                      value: "false"
                     - name: ENABLE_ABS_PUBLISH
                       value: "true"
                     - name: PING_INTELLIGENCE_ABS_ENABLE_SSL
