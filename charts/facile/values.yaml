@@ -79,6 +79,8 @@ capabilities:
     enabled: false
   verify:
     enabled: false
+  davinci:
+    enabled: true
 
 baseline:
   initialize:
