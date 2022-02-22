@@ -17,14 +17,15 @@ type: application
 # 0.3.9 - Added `imagePullPolicy: Always` to get latest into deployment
 # 0.3.10 - PingData product moved to 9.0 GA
 # 0.3.11 - Added PI ASE
+# 0.3.12 - Added DaVinci \ Bumped to 0.8.5
 
-version: 0.3.11
+version: 0.3.12
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.8.1
+appVersion: 0.8.5
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.8.1
+  version: 0.8.5
   repository: https://helm.pingidentity.com

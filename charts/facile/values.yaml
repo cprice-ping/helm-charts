@@ -297,6 +297,9 @@ collections:
     authorize:
       name: "Dynamic Authorization"
       url: https://www.getpostman.com/collections/852ab959a953e607b22b
+    davinci:
+      name: "PingOne DaVinci"
+      url: https://www.getpostman.com/collections/62dbde0fc38da57bc83d
   baseline:
     directory:
       name: "Data Store"

@@ -34,7 +34,7 @@ spec:
                     - name: PING_INTELLIGENCE_ASE_ENABLE_ABS_PUBLISH
                       value: "false"
                     - name: ENABLE_ABS_PUBLISH
-                      value: "true"
+                      value: "false"
                     - name: PING_INTELLIGENCE_ABS_ENABLE_SSL
                       value: "true"
                   volumeMounts:
