@@ -19,7 +19,7 @@ global:
 
   # Product Image version tag
   image:
-    tag: 2111
+    tag: 2202
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -140,8 +140,6 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/access /opt/out/instance/logs/errors /opt/out/instance/logs/failed-ops /opt/out/instance/logs/config-audit.log /opt/out/instance/logs/tools/dsjavaproperties.log /opt/out/instance/logs/tools/export-ldif.log /opt/out/instance/logs/tools/export-ldif.log.previous /opt/out/instance/logs/tools/install-ds.log /opt/out/instance/logs/tools/manage-profile.log /opt/out/instance/logs/tools/manage-profile.log.previous /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/out/instance/logs/tools/status.log /opt/out/instance/logs/tools/tool-invocation.log /opt/out/instance/logs/debug-trace
     logging: INFO
-    image:
-      tag: 9.0.0.0-edge
     container:
       replicaCount: 1
     services:
@@ -152,8 +150,6 @@ ping-devops:
   
   pingdataconsole:
     enabled: true
-    image:
-      tag: 9.0.0.0-edge
 
   pingfederate-admin:
     enabled: true
@@ -166,8 +162,6 @@ ping-devops:
     logging: INFO
     workload:
       type: StatefulSet
-    image:
-      tag: 11.0.0-edge
 
   pingfederate-engine:
     enabled: true
@@ -179,13 +173,9 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
       TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
     logging: INFO
-    image:
-      tag: 11.0.0-edge
 
   pingdatasync:
     enabled: true
-    image:
-      tag: 9.0.0.0-edge
 
   pingaccess-admin:
     envs:
@@ -197,8 +187,6 @@ ping-devops:
     privateCert:
       generate: true
     logging: INFO
-    image:
-      tag: 7.0.1-edge
   
   pingaccess-engine:
     envs:
@@ -209,8 +197,6 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
-    image:
-      tag: 7.0.1-edge
 
   pingdelegator:
     enabled: false
@@ -218,8 +204,6 @@ ping-devops:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdelegator
       SERVER_PROFILE_BRANCH: main
-    image:
-      tag: 4.8.0-edge
        
   pingauthorize:
     enabled: false
@@ -229,7 +213,9 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/trace /opt/out/instance/logs/policy-decision /opt/out/instance/logs/ldap-access /opt/out/instance/logs/debug-trace
     image:
-      tag: 9.0.0.0-edge
+      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
+      name: pingauthorize
+      tag: latest-03212022
 
   pingauthorizepap:
     enabled: false
@@ -239,7 +225,9 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/pingauthorize-pap.log /opt/out/instance/logs/setup.log /opt/out/instance/logs/start-server.log /opt/out/instance/logs/stop-server.log /opt/out/instance/logs/decision-audit.log
     image:
-      tag: 9.0.0.0-edge
+      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
+      name: pingauthorizepap
+      tag: latest-03212022
 
   pingIntelligence:
     image:
