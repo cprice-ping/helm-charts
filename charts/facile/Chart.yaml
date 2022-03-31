@@ -19,8 +19,9 @@ type: application
 # 0.3.11 - Added PI ASE
 # 0.3.12 - Added DaVinci \ Bumped to 0.8.5
 # 0.3.13 - PAZ \ PAP --> RC \ Bumped to 0.8.9 & 2202
+# 0.3.14 - PAZ \ PAP --> EA Release
 
-version: 0.3.13
+version: 0.3.14
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.8.9

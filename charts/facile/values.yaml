@@ -213,9 +213,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/trace /opt/out/instance/logs/policy-decision /opt/out/instance/logs/ldap-access /opt/out/instance/logs/debug-trace
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
-      name: pingauthorize
-      tag: latest-x86_64-03212022
+      tag: 9.1.0.0-EA-latest
 
   pingauthorizepap:
     enabled: false
@@ -225,9 +223,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/pingauthorize-pap.log /opt/out/instance/logs/setup.log /opt/out/instance/logs/start-server.log /opt/out/instance/logs/stop-server.log /opt/out/instance/logs/decision-audit.log
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
-      name: pingauthorizepap
-      tag: latest-x86_64-03212022
+      tag: 9.1.0.0-EA-latest
 
   pingIntelligence:
     image:
