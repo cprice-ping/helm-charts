@@ -3,7 +3,21 @@ entries:
   ping-facile:
   - apiVersion: v2
     appVersion: 0.8.9
-    created: "2022-03-31T15:00:23.356451-07:00"
+    created: "2022-04-12T09:16:45.89432-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.8.9
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: a5eaef737cf2e96ce017f6b708d571c61fa954d47b01051abe69abbec5f2dd2b
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.3.15.tgz
+    version: 0.3.15
+  - apiVersion: v2
+    appVersion: 0.8.9
+    created: "2022-04-12T09:16:45.888401-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -17,7 +31,7 @@ entries:
     version: 0.3.14
   - apiVersion: v2
     appVersion: 0.8.9
-    created: "2022-03-31T15:00:23.349853-07:00"
+    created: "2022-04-12T09:16:45.882966-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -31,7 +45,7 @@ entries:
     version: 0.3.13
   - apiVersion: v2
     appVersion: 0.8.5
-    created: "2022-03-31T15:00:23.341587-07:00"
+    created: "2022-04-12T09:16:45.876614-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -45,7 +59,7 @@ entries:
     version: 0.3.12
   - apiVersion: v2
     appVersion: 0.8.1
-    created: "2022-03-31T15:00:23.317741-07:00"
+    created: "2022-04-12T09:16:45.869398-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -59,7 +73,7 @@ entries:
     version: 0.3.11
   - apiVersion: v2
     appVersion: 0.8.1
-    created: "2022-03-31T15:00:23.311591-07:00"
+    created: "2022-04-12T09:16:45.863587-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -71,4 +85,4 @@ entries:
     urls:
     - ping-facile-0.3.10.tgz
     version: 0.3.10
-generated: "2022-03-31T15:00:23.303278-07:00"
+generated: "2022-04-12T09:16:45.85648-07:00"

@@ -142,6 +142,8 @@ ping-devops:
     logging: INFO
     container:
       replicaCount: 1
+    image:
+      tag: 9.1.0.0-EA-latest
     services:
       apis:
         dataService: true
@@ -150,6 +152,8 @@ ping-devops:
   
   pingdataconsole:
     enabled: true
+    image:
+      tag: 9.1.0.0-EA-latest
 
   pingfederate-admin:
     enabled: true
@@ -176,6 +180,8 @@ ping-devops:
 
   pingdatasync:
     enabled: true
+    image:
+      tag: 9.1.0.0-EA-latest
 
   pingaccess-admin:
     envs:
