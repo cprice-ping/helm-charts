@@ -21,14 +21,15 @@ type: application
 # 0.3.13 - PAZ \ PAP --> RC \ Bumped to 0.8.9 & 2202
 # 0.3.14 - PAZ \ PAP --> EA Release
 # 0.3.15 - Bumping PD \ PDS to 9.1 EA
+# 0.3.16 - Adding P1 Fraud
 
-version: 0.3.15
+version: 0.3.16
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.8.9
+appVersion: 0.9.1
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.8.9
+  version: 0.9.1
   repository: https://helm.pingidentity.com

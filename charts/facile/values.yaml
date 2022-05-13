@@ -81,6 +81,8 @@ capabilities:
     enabled: false
   davinci:
     enabled: true
+  fraud:
+    enabled: true
 
 baseline:
   initialize:
@@ -292,6 +294,9 @@ collections:
     davinci:
       name: "PingOne DaVinci"
       url: https://www.getpostman.com/collections/62dbde0fc38da57bc83d
+    fraud:
+      name: "PingOne Fraud"
+      url: https://www.getpostman.com/collections/0fed9479aa83274560af
   baseline:
     directory:
       name: "Data Store"
