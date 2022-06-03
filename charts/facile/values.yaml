@@ -145,9 +145,8 @@ ping-devops:
     container:
       replicaCount: 1
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
       name: pingdirectory
-      tag: latest-x86_64-05252022
+      tag: 9.1.0.0-EA-latest
     services:
       apis:
         dataService: true
@@ -157,9 +156,8 @@ ping-devops:
   pingdataconsole:
     enabled: true
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
       name: pingdataconsole
-      tag: latest-x86_64-05252022
+      tag: 9.1.0.0-EA-latest
 
   pingfederate-admin:
     enabled: true
@@ -187,9 +185,8 @@ ping-devops:
   pingdatasync:
     enabled: true
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
       name: pingdatasync
-      tag: latest-x86_64-05252022
+      tag: 9.1.0.0-EA-latest
 
   pingaccess-admin:
     envs:
@@ -215,9 +212,8 @@ ping-devops:
   pingdelegator:
     enabled: false
     image:
-      repository: 574076504146.dkr.ecr.us-east-1.amazonaws.com/snapshot-builds
       name: pingdelegator
-      tag: latest-x86_64-05252022
+      tag: 9.1.0.0-EA-latest
     envs:
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingdelegator
