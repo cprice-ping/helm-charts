@@ -5,6 +5,8 @@
             {{- print "eu" }}
         {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "ASIA" }}
             {{- print "asia" }}
+        {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "CA" }}
+            {{- print "ca" }}
         {{- else }}
             {{- print "com" }}
         {{- end}}
@@ -18,6 +20,8 @@
             {{- print "eu" }}
         {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "ASIA" }}
             {{- print "ap" }}
+        {{- else if eq ( default "NA" .Values.pingOne.envRegion ) "CA" }}
+            {{- print "ca" }}
         {{- else }}
             {{- print "na" }}
         {{- end}}
