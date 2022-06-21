@@ -23,8 +23,9 @@ type: application
 # 0.3.15 - Bumping PD \ PDS to 9.1 EA
 # 0.3.16 - Adding P1 Fraud
 # 0.3.17 - Adding .ca P1 Region
+# 0.3.18 - Bumping to 2206 GA versions
 
-version: 0.3.17
+version: 0.3.18
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.2
@@ -32,5 +33,5 @@ appVersion: 0.9.2
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.1
+  version: 0.9.2
   repository: https://helm.pingidentity.com
