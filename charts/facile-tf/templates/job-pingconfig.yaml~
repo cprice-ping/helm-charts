@@ -1,0 +1,35 @@
+{{- if .Values.usePingConfig.enabled -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ include "facile.name" . }}
+    helm.sh/chart: {{ include "facile.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  name: {{ .Release.Name }}-pingconfig
+spec:
+  template:
+    spec:
+      containers:
+      - env:
+        - name: COLLECTIONS
+          value: {{ include "facile.addCapabilityURLs" . }}{{ include "facile.useCaseUrls" . }},{{ .Values.collections.baseline.riskDashboard.url }}
+        image: pricecs/pingconfigurator:latest
+        imagePullPolicy: "Always"
+        name: pingconfig
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/src/app/postman_vars.json
+          name: {{ .Release.Name }}-postman
+          subPath: postman_vars.json
+      restartPolicy: Never
+      serviceAccountName: ""
+      volumes:
+      - configMap:
+          items:
+          - key: postman_vars.json
+            path: postman_vars.json
+          name: {{ .Release.Name }}-postman
+        name: {{ .Release.Name }}-postman
+{{- end -}}
