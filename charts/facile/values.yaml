@@ -246,9 +246,10 @@ ping-devops:
     # image:
     #   tag: 9.1.0.0-edge
 
-  # pingIntelligence:
-  #   image:
-  #     tag: 5.1.1-edge
+  pingIntelligence:
+    enabled: true
+    # image:
+    #   tag: 5.1.1-edge
 
 collections:
   useCases:
