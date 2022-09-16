@@ -75,11 +75,6 @@ data:
                 "enabled": true
             },
             {
-                "key": "p1FraudCred",
-                "value": {{ .Values.pingOne.gateways.p1Fraud.credential | trim | quote }},
-                "enabled": true
-            },
-            {
                 "key": "pfBaseURL",
                 "value": "https://{{ include "facile.hostname" . }}",
                 "enabled": true

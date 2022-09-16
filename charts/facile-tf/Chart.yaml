@@ -10,10 +10,10 @@ type: application
 version: 0.0.1
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.4
+appVersion: 0.9.5
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.4
+  version: 0.9.5
   repository: https://helm.pingidentity.com

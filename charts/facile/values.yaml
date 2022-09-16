@@ -18,8 +18,8 @@ global:
   addReleaseNameToResource: prepend
 
   # Product Image version tag
-  image:
-    tag: 2202
+  # image:
+  #   tag: 2202
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -146,7 +146,7 @@ ping-devops:
       replicaCount: 1
     image:
       name: pingdirectory
-      tag: 9.1.0.0-edge
+      # tag: 9.1.0.0-edge
     services:
       apis:
         dataService: true
@@ -171,7 +171,7 @@ ping-devops:
     workload:
       type: StatefulSet
     image:
-      tag: 11.1.0-edge
+      # tag: 11.1.0-edge
 
   pingfederate-engine:
     enabled: true
@@ -184,13 +184,13 @@ ping-devops:
       TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
     logging: INFO
     image:
-      tag: 11.1.0-edge
+      # tag: 11.1.0-edge
 
   pingdatasync:
     enabled: true
     image:
       name: pingdatasync
-      tag: 9.1.0.0-edge
+      # tag: 9.1.0.0-edge
 
   pingaccess-admin:
     envs:
@@ -203,7 +203,7 @@ ping-devops:
       generate: true
     logging: INFO
     image:
-      tag: 7.1.0-edge
+      # tag: 7.1.0-edge
   
   pingaccess-engine:
     envs:
@@ -215,7 +215,7 @@ ping-devops:
     enabled: false
     logging: INFO
     image:
-      tag: 7.1.0-edge
+      # tag: 7.1.0-edge
 
   pingdelegator:
     enabled: false
@@ -224,7 +224,7 @@ ping-devops:
       SERVER_PROFILE_PATH: pingdelegator
       SERVER_PROFILE_BRANCH: main
     image:
-      tag: 4.10.0-edge
+      # tag: 4.10.0-edge
        
   pingauthorize:
     enabled: false
@@ -234,7 +234,7 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/trace /opt/out/instance/logs/policy-decision /opt/out/instance/logs/ldap-access /opt/out/instance/logs/debug-trace
     image:
-      tag: 9.1.0.0-edge
+      # tag: 9.1.0.0-edge
 
   pingauthorizepap:
     enabled: false
@@ -244,11 +244,11 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/pingauthorize-pap.log /opt/out/instance/logs/setup.log /opt/out/instance/logs/start-server.log /opt/out/instance/logs/stop-server.log /opt/out/instance/logs/decision-audit.log
     image:
-      tag: 9.1.0.0-edge
+      # tag: 9.1.0.0-edge
 
   pingIntelligence:
     image:
-      tag: 5.1.1-edge
+      # tag: 5.1.1-edge
 
 collections:
   useCases:
