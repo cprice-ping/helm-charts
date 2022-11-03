@@ -26,14 +26,14 @@ type: application
 # 0.3.18 - Bumping to 2206 GA versions
 # 0.3.19 - Switching to `ping-devops` versions
 # 0.3.20 - Bumping `ping-devops` \ Adding DV v2 IK & Fragment
-
-version: 0.3.20
+# 0.3.21 - Bumping `ping-devops` \ Attempting to stop evictions of PF Engines
+version: 0.3.21
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.6
+appVersion: 0.9.7
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.6
+  version: 0.9.7
   repository: https://helm.pingidentity.com

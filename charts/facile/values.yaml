@@ -185,6 +185,10 @@ ping-devops:
     logging: INFO
     # image:
     #   tag: 11.1.0-edge
+    container:
+      resources:
+        requests:
+          cpu: 0.05
 
   pingdatasync:
     enabled: true
