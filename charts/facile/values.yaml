@@ -312,9 +312,9 @@ collections:
     davinci:
       name: "PingOne DaVinci"
       url: https://www.getpostman.com/collections/bf0193c1c66a6cff7101
-    fraud:
-      name: "PingOne Fraud"
-      url: https://www.getpostman.com/collections/0fed9479aa83274560af
+    # fraud:
+    #   name: "PingOne Fraud"
+    #   url: https://www.getpostman.com/collections/0fed9479aa83274560af
   baseline:
     directory:
       name: "Data Store"

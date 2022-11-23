@@ -27,7 +27,8 @@ type: application
 # 0.3.19 - Switching to `ping-devops` versions
 # 0.3.20 - Bumping `ping-devops` \ Adding DV v2 IK & Fragment
 # 0.3.21 - Bumping `ping-devops` \ Attempting to stop evictions of PF Engines
-version: 0.3.21
+# 0.3.22 - Removing PingOne Fraud collection
+version: 0.3.22
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.7
