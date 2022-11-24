@@ -21,10 +21,10 @@ spec:
             containers:
                 - name: pingoneldapgateway
                   image: gcr.io/ping-identity/pingone/pingone-ldap-gateway
-                  imagePullPolicy: "IfNotPresent"
+                  imagePullPolicy: "Always"
                   env:
                     - name: PING_IDENTITY_ACCEPT_EULA
                       value: "yes"
                     - name: gatewayCredential
-                      value: ""
+                      value: {{ .Values.gateways.ldap.credential }}
 {{- end -}}
