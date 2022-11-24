@@ -26,5 +26,5 @@ spec:
                     - name: PING_IDENTITY_ACCEPT_EULA
                       value: "yes"
                     - name: gatewayCredential
-                      value: {{ .Values.gateways.ldap.credential }}
+                      value: {{ .Values.pingOne.gateways.ldap.credential }}
 {{- end -}}
