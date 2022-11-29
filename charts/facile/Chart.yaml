@@ -29,8 +29,9 @@ type: application
 # 0.3.21 - Bumping `ping-devops` \ Attempting to stop evictions of PF Engines
 # 0.3.22 - Removing PingOne Fraud collection
 # 0.3.23 - Adding P1 LDAP Gateway
+# 0.3.24 - Updating Ingress to v1 API
 
-version: 0.3.23
+version: 0.3.24
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.7
