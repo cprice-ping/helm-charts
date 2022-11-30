@@ -276,7 +276,8 @@ collections:
       url: https://api.postman.com/collections/1239082-75541c7c-fea7-4281-b955-6ecc6e7f65fb?access_key=PMAT-01GK306VQCZ7V4F3XNGGANWQT7
     accessControl:
       name: "Access Control (API \\ Web)"
-      url: https://www.getpostman.com/collections/30bd6d0e5f4a523c9448
+      # url: https://www.getpostman.com/collections/30bd6d0e5f4a523c9448
+      url: https://api.postman.com/collections/1239082-df2ed2a6-4078-41dd-8780-bde853081563?access_key=PMAT-01GK3D36AM0HF2SZ4X0BGVQYB6
     scim:
       name: "SCIM v2"
       url: https://www.getpostman.com/collections/8b746e4dc422b1a490a7
@@ -288,13 +289,11 @@ collections:
       name: "Unified User Profiles"
       # url: https://www.getpostman.com/collections/f398715be18b040e211d
       url: https://api.postman.com/collections/1239082-3433d3f6-9587-41f7-bd53-8f67d71aaad6?access_key=PMAT-01GK2Y7XTH46NZBB7JSVMQ7QJP
-    verifyDemoEnv:
-      name: "PingVerify Demo Env"
-      url: https://www.getpostman.com/collections/fbb4f0dfa372912209f0
   capabilities:
     pingOne:
       name: "Unified Administration"
-      url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
+      # url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
+      url: https://api.postman.com/collections/1239082-9508e3b2-a612-472a-911e-54bf971c2cab?access_key=PMAT-01GK3C2C73QDBQTGY0TPCCA2YM
     authenticationAuthority:
       name: "Authentication Authority"
       # url: https://www.getpostman.com/collections/d44bd9bcbe599eec80a7
@@ -330,4 +329,5 @@ collections:
       url: https://api.postman.com/collections/1239082-38f773cf-726b-458f-84eb-06e3ab264cad?access_key=PMAT-01GK303AYAQAKGDP8YBAYBAVG9
     riskDashboard:
       name: "Risk Dashboard"
-      url: https://www.getpostman.com/collections/9426fc0b9dd0b43c9351
+      # url: https://www.getpostman.com/collections/9426fc0b9dd0b43c9351
+      url: https://api.postman.com/collections/1239082-999a566c-2a2b-47e0-abb0-93e3da13518c?access_key=PMAT-01GK3CVZX7VQZMY2PK2TM87B5J
