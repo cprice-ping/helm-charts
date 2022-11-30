@@ -281,7 +281,8 @@ collections:
       url: https://www.getpostman.com/collections/69ea2f964dcb562299db
     userProfiles: 
       name: "Unified User Profiles"
-      url: https://www.getpostman.com/collections/f398715be18b040e211d
+      # url: https://www.getpostman.com/collections/f398715be18b040e211d
+      url: https://api.postman.com/collections/1239082-3433d3f6-9587-41f7-bd53-8f67d71aaad6?access_key=PMAT-01GK2Y7XTH46NZBB7JSVMQ7QJP
     verifyDemoEnv:
       name: "PingVerify Demo Env"
       url: https://www.getpostman.com/collections/fbb4f0dfa372912209f0
