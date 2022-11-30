@@ -260,16 +260,20 @@ collections:
       url: https://www.getpostman.com/collections/eaa397bd3a35ef3095c1
     ciba:
       name: "CIBA"
-      url: https://www.getpostman.com/collections/a2f18fed21e4a14d048a
+      # url: https://www.getpostman.com/collections/a2f18fed21e4a14d048a
+      url: https://api.postman.com/collections/1239082-6b548244-e3e5-429f-8ad1-f43556c47bb5?access_key=PMAT-01GK304XHBD7CQ35KRFKQAVPWN
     consentManagement:
       name: "Consent Management"
-      url: https://www.getpostman.com/collections/4f27daff62383fd3f4ed
+      # url: https://www.getpostman.com/collections/4f27daff62383fd3f4ed
+      url: https://api.postman.com/collections/1239082-0e249c8f-349b-4d24-bc24-9d4b36f02bd3?access_key=PMAT-01GK305H5ERBV94FQV177480XR
     consentEnforcement:
       name: "Consent Enforcement" 
-      url: https://www.getpostman.com/collections/a1808de03c1aff9d51a0
+      # url: https://www.getpostman.com/collections/a1808de03c1aff9d51a0
+      url: https://api.postman.com/collections/1239082-940501f0-de76-4ce5-9251-010d58adc8ce?access_key=PMAT-01GK3063XA0EB63NE6D89D4VV1
     delegatedAdministration: 
       name: "Delegated Administration"
-      url: https://www.getpostman.com/collections/67c0839677fa2b0fad81
+      # url: https://www.getpostman.com/collections/67c0839677fa2b0fad81
+      url: https://api.postman.com/collections/1239082-75541c7c-fea7-4281-b955-6ecc6e7f65fb?access_key=PMAT-01GK306VQCZ7V4F3XNGGANWQT7
     accessControl:
       name: "Access Control (API \\ Web)"
       url: https://www.getpostman.com/collections/30bd6d0e5f4a523c9448
@@ -278,7 +282,8 @@ collections:
       url: https://www.getpostman.com/collections/8b746e4dc422b1a490a7
     socialConnections:
       name: "Social Connections"
-      url: https://www.getpostman.com/collections/69ea2f964dcb562299db
+      # url: https://www.getpostman.com/collections/69ea2f964dcb562299db
+      url: https://api.postman.com/collections/1239082-cca83503-29fa-4d09-9741-de2533e0c67d?access_key=PMAT-01GK3088JX6TC7JVTNRPBS8P5J
     userProfiles: 
       name: "Unified User Profiles"
       # url: https://www.getpostman.com/collections/f398715be18b040e211d
@@ -292,29 +297,37 @@ collections:
       url: https://www.getpostman.com/collections/6f6d11a1b8536d740592
     authenticationAuthority:
       name: "Authentication Authority"
-      url: https://www.getpostman.com/collections/d44bd9bcbe599eec80a7
+      # url: https://www.getpostman.com/collections/d44bd9bcbe599eec80a7
+      url: https://api.postman.com/collections/1239082-38872902-4628-4a65-bebd-3b2fbab5b653?access_key=PMAT-01GK2ZVFTJ76S0J3778NJ6X7AT
     accessManager:
       name: "Access Manager"
-      url: https://www.getpostman.com/collections/934936decf928c0cc792
+      # url: https://www.getpostman.com/collections/934936decf928c0cc792
+      url: https://api.postman.com/collections/1239082-319a568a-9597-4b54-8aa3-e8b6a03a7c6c?access_key=PMAT-01GK2ZWS5SM14JK5PNM337MV0G
     multiFactorAuthentication:
       name: "Multi Factor Service"
-      url: https://www.getpostman.com/collections/8c8a18c411a8222a2469
+      # url: https://www.getpostman.com/collections/8c8a18c411a8222a2469
+      url: https://api.postman.com/collections/1239082-8cbb5ce0-424a-4e43-adce-330ebd21551c?access_key=PMAT-01GK2ZYFENMM1867BB2SM6W47V
     risk:
       name: "Adaptive Authentication"
-      url: https://www.getpostman.com/collections/c858030284d959de50f7
+      # url: https://www.getpostman.com/collections/c858030284d959de50f7
+      url: https://api.postman.com/collections/1239082-329d3441-6dd0-48b3-a755-a5566d37392c?access_key=PMAT-01GK2ZZJ734PMBCRK6CM9QT171
     verify:
       name: "Identity Verification"
-      url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
+      # url: https://www.getpostman.com/collections/f10b3fa241dd9394024a
+      url: https://api.postman.com/collections/1239082-53bf960e-2f42-4c38-974a-948169c0ba0e?access_key=PMAT-01GK3015A2GS2NGC5Z4Y2FKM0A
     authorize:
       name: "Dynamic Authorization"
-      url: https://www.getpostman.com/collections/852ab959a953e607b22b
+      # url: https://www.getpostman.com/collections/852ab959a953e607b22b
+      url: https://api.postman.com/collections/1239082-dd903714-ea6a-4c33-bbd6-f122b7e43bd3?access_key=PMAT-01GK301XKQHAWHAG2HDMMXFESZ
     davinci:
       name: "PingOne DaVinci"
-      url: https://www.getpostman.com/collections/bf0193c1c66a6cff7101
+      # url: https://www.getpostman.com/collections/bf0193c1c66a6cff7101
+      url: https://api.postman.com/collections/1239082-1f54d042-f690-4ac5-afc9-6fa8134dc41a?access_key=PMAT-01GK302GANFCGR9CAHBN3TTBMV
   baseline:
     directory:
       name: "Data Store"
-      url: https://www.getpostman.com/collections/f59e241da208cb731775
+      # url: https://www.getpostman.com/collections/f59e241da208cb731775
+      url: https://api.postman.com/collections/1239082-38f773cf-726b-458f-84eb-06e3ab264cad?access_key=PMAT-01GK303AYAQAKGDP8YBAYBAVG9
     riskDashboard:
       name: "Risk Dashboard"
       url: https://www.getpostman.com/collections/9426fc0b9dd0b43c9351
