@@ -31,14 +31,15 @@ type: application
 # 0.3.23 - Adding P1 LDAP Gateway
 # 0.3.24 - Testing Postman URLs to new scheme (Unified User Profiles)
 # 0.3.25 - Updating Postman URLs
+# 0.4.0 - Updating to Dec 2022 releases
 
-version: 0.3.25
+version: 0.4.0
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.7
+appVersion: 0.9.8
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.7
+  version: 0.9.8
   repository: https://helm.pingidentity.com
