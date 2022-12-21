@@ -33,8 +33,9 @@ type: application
 # 0.3.25 - Updating Postman URLs
 # 0.4.0 - Updating to Dec 2022 releases
 # 0.4.1 - Adding PingCentral
+# 0.4.2 - Adding SSO to PingCentral
 
-version: 0.4.1
+version: 0.4.2
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.8
