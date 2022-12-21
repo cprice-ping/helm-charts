@@ -34,12 +34,12 @@ data:
   PD_ENGINE_PUBLIC_PORT: "443"
   PD_DELEGATOR_PROFILE_SCOPE_ENABLED: "true"
   {{- end }}
-  {{- if .Values.capabilies.pingcentral.enabled }}
+
   PC_ISSUER_URI: {{ include "facile.pingOneAdminUrl" . | quote }}
   PC_CLIENT_ID: .Values.pingOne.administration.pcLoginApp.id
   PC_CLIENT_SECRET: .Values.pingOne.administration.pcLoginApp.secret
   PC_JWKS_ENDPOINT_URI: "{{ include "facile.pingOneAdminUrl" . }}/jwks"
-  {{- end }}
+
   {{/* Removing until PAP catches up with OIDC and Admin API configs
 
   {{- if .Values.capabilities.authorize.enabled }}
