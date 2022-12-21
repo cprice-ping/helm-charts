@@ -81,6 +81,8 @@ capabilities:
     enabled: false
   davinci:
     enabled: true
+  pingcentral:
+    enabled: true
 
 baseline:
   initialize:
