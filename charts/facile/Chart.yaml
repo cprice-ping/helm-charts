@@ -32,8 +32,9 @@ type: application
 # 0.3.24 - Testing Postman URLs to new scheme (Unified User Profiles)
 # 0.3.25 - Updating Postman URLs
 # 0.4.0 - Updating to Dec 2022 releases
+# 0.4.1 - Adding PingCentral
 
-version: 0.4.0
+version: 0.4.1
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.8

@@ -114,6 +114,16 @@
     {{- end -}}
 {{- end -}}
 
+{{- define "facile.pcAdminHostname" -}}
+    {{ if eq .Values.global.ingress.addReleaseNameToHost "append" }}
+        {{- print "pingcentral-" .Release.Name "." .Values.global.ingress.defaultDomain }}
+    {{- else if eq .Values.global.ingress.addReleaseNameToHost "prepend" -}}
+        {{- print .Release.Name "-" "pingcentral." .Values.global.ingress.defaultDomain }}
+    {{- else -}}
+        {{- print "pingcentral." .Values.global.ingress.defaultDomain }}
+    {{- end -}}
+{{- end -}}
+
 {{/* Playing with Lookups */}}
 {{- define "facile.pfAdminHostnameLookup" -}}
     {{ range $index, $val := ((lookup "extensions/v1beta1" "Ingress" .Release.Namespace ( include "facile.pfAdminServiceName" . )).spec.rules) }}

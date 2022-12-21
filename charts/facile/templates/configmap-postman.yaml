@@ -160,6 +160,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "pcConsoleURL",
+                "value": "https://{{ include "facile.pcAdminHostname" . }}", 
+                "enabled": true
+            },
+            {
                 "key": "pdsAdminURL",
                 "value": "https://{{ include "facile.pdsAdminServiceName" . }}:{{ include "pingports.pdsAdminPort" . }}", 
                 "enabled": true

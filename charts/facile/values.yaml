@@ -253,6 +253,26 @@ ping-devops:
     # image:
     #   tag: 5.1.1-edge
 
+  pingcentral:
+    enabled: true
+    envs:
+      SERVER_PROFILE_URL: https://github.com/pingidentity/pingidentity-server-profiles.git
+      SERVER_PROFILE_PATH: baseline/pingcentral/dev-unsecure
+      PING_CENTRAL_LOG_LEVEL: DEBUG
+      PINGCENTRAL_EXPRESSIONS_ENABLED: "true"
+      PING_CENTRAL_BLIND_TRUST: "true"
+    workload:
+      type: StatefulSet
+      statefulSet:
+        persistentvolume:
+          volumes:
+            out-dir:
+              mountPath: /opt/out
+              persistentVolumeClaim:
+                resources:
+                  requests:
+                    storage: 4Gi
+
 collections:
   useCases:
     paAsProxy:
@@ -322,6 +342,9 @@ collections:
       name: "PingOne DaVinci"
       # url: https://www.getpostman.com/collections/bf0193c1c66a6cff7101
       url: https://api.postman.com/collections/1239082-1f54d042-f690-4ac5-afc9-6fa8134dc41a?access_key=PMAT-01GK302GANFCGR9CAHBN3TTBMV
+    pingcentral:
+      name: "PingCentral"
+      url: https://api.postman.com/collections/1239082-c1f34f6e-2131-444b-9ecf-227f2213f128?access_key=PMAT-01GMTSPS1VK42KS3QEHPHC8B0W
   baseline:
     directory:
       name: "Data Store"
