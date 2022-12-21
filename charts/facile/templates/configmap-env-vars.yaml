@@ -36,8 +36,8 @@ data:
   {{- end }}
 
   PC_ISSUER_URI: {{ include "facile.pingOneAdminUrl" . | quote }}
-  PC_CLIENT_ID: .Values.pingOne.administration.pcLogonApp.id
-  PC_CLIENT_SECRET: .Values.pingOne.administration.pcLogonApp.secret
+  PC_CLIENT_ID: {{ .Values.pingOne.administration.pcLogonApp.id }}
+  PC_CLIENT_SECRET: {{ .Values.pingOne.administration.pcLogonApp.secret }}
   PC_JWKS_ENDPOINT_URI: "{{ include "facile.pingOneAdminUrl" . }}/jwks"
 
   {{/* Removing until PAP catches up with OIDC and Admin API configs
