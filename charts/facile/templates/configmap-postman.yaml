@@ -165,6 +165,11 @@ data:
                 "enabled": true
             },
             {
+                "key": "pcAdminURL",
+                "value": "https://{{ include "facile.pcAdminServiceName" . }}:{{ include "pingports.pcAdminPort" . }}", 
+                "enabled": true
+            },
+            {
                 "key": "pdsAdminURL",
                 "value": "https://{{ include "facile.pdsAdminServiceName" . }}:{{ include "pingports.pdsAdminPort" . }}", 
                 "enabled": true

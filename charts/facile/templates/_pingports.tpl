@@ -56,15 +56,15 @@
 
 {{/* PingAuthorize ConfigAPI */}}
 {{- define "pingports.pazConfigPort" -}}
-    {{- print (index .Values "ping-devops").pingdatagovernance.services.https.servicePort }}
+    {{- print (index .Values "ping-devops").pingauthorize.services.https.servicePort }}
 {{- end }}
 
 {{/* PingAuthorizePAP API */}}
 {{- define "pingports.papAdminPort" -}}
-    {{- print (index .Values "ping-devops").pingdatagovernancepap.services.https.servicePort }}
+    {{- print (index .Values "ping-devops").pingauthorizepap.services.https.servicePort }}
 {{- end }}
 
 {{/* PingCentral Admin */}}
 {{- define "pingports.pcAdminPort" -}}
-    {{- print 9022 }} 
+    {{- print (index .Values "ping-devops").pingcentral.services.https.servicePort }} 
 {{- end }}

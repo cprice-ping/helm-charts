@@ -74,6 +74,10 @@
     {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingauthorizepap" ) .Values.global)) }}
 {{- end }}
 
+{{- define "facile.pcAdminServiceName" -}}
+    {{ include "pinglib.fullname" (list . (merge ( index .Values "ping-devops" "pingcentral" ) .Values.global)) }}
+{{- end }}
+
 {{- define "facile.pfAdminHostname" -}}
     {{ if eq .Values.global.ingress.addReleaseNameToHost "append" }}
         {{- print "pingfederate-admin-" .Release.Name "." .Values.global.ingress.defaultDomain }}
