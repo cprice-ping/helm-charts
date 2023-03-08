@@ -35,14 +35,15 @@ type: application
 # 0.4.1 - Adding PingCentral
 # 0.4.2 - Adding SSO to PingCentral
 # 0.4.3 - Bumping `ping-devops`
+# 0.4.4 - Bumping `ping-devops` \ Disabled PI
 
-version: 0.4.3
+version: 0.4.4
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.10
+appVersion: 0.9.11
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.10
+  version: 0.9.11
   repository: https://helm.pingidentity.com
