@@ -188,7 +188,7 @@ ping-devops:
     container:
       resources:
         requests:
-          cpu: 0.50
+          cpu: 0.60
 
   pingdatasync:
     enabled: true
