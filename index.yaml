@@ -3,7 +3,21 @@ entries:
   ping-facile:
   - apiVersion: v2
     appVersion: 0.9.11
-    created: "2023-03-09T07:52:03.174956-08:00"
+    created: "2023-03-09T11:01:29.840989-08:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.9.11
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: e73499c38e65591588b9fe5260ccd1dfa6e77c7b35a1269648d97a30b9da4fd5
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.4.5.tgz
+    version: 0.4.5
+  - apiVersion: v2
+    appVersion: 0.9.11
+    created: "2023-03-09T11:01:29.834247-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -17,7 +31,7 @@ entries:
     version: 0.4.4
   - apiVersion: v2
     appVersion: 0.9.10
-    created: "2023-03-09T07:52:03.169366-08:00"
+    created: "2023-03-09T11:01:29.825864-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -31,7 +45,7 @@ entries:
     version: 0.4.3
   - apiVersion: v2
     appVersion: 0.9.8
-    created: "2023-03-09T07:52:03.160395-08:00"
+    created: "2023-03-09T11:01:29.818135-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -45,7 +59,7 @@ entries:
     version: 0.4.2
   - apiVersion: v2
     appVersion: 0.9.8
-    created: "2023-03-09T07:52:03.151922-08:00"
+    created: "2023-03-09T11:01:29.807657-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -59,7 +73,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 0.9.8
-    created: "2023-03-09T07:52:03.142595-08:00"
+    created: "2023-03-09T11:01:29.799312-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -74,7 +88,7 @@ entries:
   ping-facile-tf:
   - apiVersion: v2
     appVersion: 0.9.4
-    created: "2023-03-09T07:52:03.181997-08:00"
+    created: "2023-03-09T11:01:29.847865-08:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -86,4 +100,4 @@ entries:
     urls:
     - ping-facile-tf-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-09T07:52:03.132653-08:00"
+generated: "2023-03-09T11:01:29.789641-08:00"

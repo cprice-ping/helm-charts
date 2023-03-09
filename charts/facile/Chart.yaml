@@ -36,8 +36,9 @@ type: application
 # 0.4.2 - Adding SSO to PingCentral
 # 0.4.3 - Bumping `ping-devops`
 # 0.4.4 - Bumping `ping-devops` \ Disabled PI
+# 0.4.5 - Adding limits to PF Engine to attempt to stop evictions
 
-version: 0.4.4
+version: 0.4.5
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.11

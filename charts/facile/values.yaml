@@ -189,6 +189,7 @@ ping-devops:
       resources:
         requests:
           cpu: 0.60
+          memory: 2G
 
   pingdatasync:
     enabled: true
