@@ -24,88 +24,116 @@ spec:
       # PingFederate Client Endpoints
       # SAML \ Identity Provider
       - path: /idp/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # SAML \ Service Provider
       - path: /sp/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # OAuth \ Authorization Server
       - path: /as/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # OIDC \ Discovery Endpoint
       - path: /.well-known/openid-configuration
-        #pathType: Exact
+        pathType: Exact
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # OIDC JWKS \ Web Services \ AuthN API Explorer
       - path: /pf
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # Web Service Endpoint
       - path: /ext/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # Template Assets
       - path: /assets/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       - path: /OAuthPlayground/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingfederate-engine
-          servicePort: {{ include "pingports.pfEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingfederate-engine
+            port: 
+              number: {{ include "pingports.pfEnginePort" . }}
       # PingDirectory
       # Directory API
       - path: /directory/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingdirectory
-          servicePort: {{ include "pingports.pdApiPort" . }}
+          service:
+            name: {{ .Release.Name }}-pingdirectory
+            port: 
+              number: {{ include "pingports.pdApiPort" . }}
       # Consent API
       - path: /consent/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingdirectory
-          servicePort: {{ include "pingports.pdApiPort" . }}
-            # Consent API
+          service:
+            name: {{ .Release.Name }}-pingdirectory
+            port: 
+              number: {{ include "pingports.pdApiPort" . }}
+      # Consent API
       - path: /scim/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingdirectory
-          servicePort: {{ include "pingports.pdApiPort" . }}
+          service:
+            name: {{ .Release.Name }}-pingdirectory
+            port: 
+              number: {{ include "pingports.pdApiPort" . }}
       {{- if .Values.useCases.delegatedAdministration.enabled }}
       # Delegated Admin paths
       - path: /dadmin/
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingdirectory
-          servicePort: {{ include "pingports.pdApiPort" . }}
+          service:
+            name: {{ .Release.Name }}-pingdirectory
+            port: 
+              number: {{ include "pingports.pdApiPort" . }}
       - path: /delegator
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingdelegator
-          servicePort: {{ include "pingports.pingDelegatorPort" . }}
+          service:
+            name: {{ .Release.Name }}-pingdelegator
+            port: 
+              number: {{ include "pingports.pingDelegatorPort" . }}
       {{- end }}
       {{- if .Values.capabilities.accessManager.enabled }}
       # If PA is deployed - everything else goes there...
       - path: /
-        #pathType: Prefix
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-pingaccess-engine
-          servicePort: {{ include "pingports.paEnginePort" . }}
+          service:
+            name: {{ .Release.Name }}-pingaccess-engine
+            port: 
+              number: {{ include "pingports.paEnginePort" . }}
       {{- end }}
