@@ -144,9 +144,9 @@ ping-devops:
     logging: INFO
     container:
       replicaCount: 1
-    # image:
-    #   name: pingdirectory
-    #   tag: 9.2.0.0-edge
+    image:
+      name: pingdirectory
+      tag: 9.3.0.0-edge
     services:
       apis:
         dataService: true
@@ -155,9 +155,9 @@ ping-devops:
   
   pingdataconsole:
     enabled: true
-    # image:
-    #   name: pingdataconsole
-    #   tag: 9.2.0.0-edge
+    image:
+      name: pingdataconsole
+      tag: 9.3.0.0-edge
 
   pingfederate-admin:
     enabled: true
@@ -195,9 +195,9 @@ ping-devops:
 
   pingdatasync:
     enabled: true
-    # image:
-    #   name: pingdatasync
-    #   tag: 9.2.0.0-edge
+    image:
+      name: pingdatasync
+      tag: 9.3.0.0-edge
 
   pingaccess-admin:
     envs:
@@ -209,8 +209,8 @@ ping-devops:
     privateCert:
       generate: true
     logging: INFO
-    # image:
-    #   tag: 7.2.0-edge
+    image:
+      tag: 7.3.0-edge
   
   pingaccess-engine:
     envs:
@@ -221,8 +221,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
-    # image:
-    #   tag: 7.2.0-edge
+    image:
+      tag: 7.3.0-edge
 
   pingdelegator:
     enabled: false
@@ -240,8 +240,8 @@ ping-devops:
       SERVER_PROFILE_PATH: pingauthorize
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/trace /opt/out/instance/logs/policy-decision /opt/out/instance/logs/ldap-access /opt/out/instance/logs/debug-trace
-    # image:
-    #   tag: 9.2.0.0-edge
+    image:
+      tag: 9.3.0.0-edge
 
   pingauthorizepap:
     enabled: false
@@ -250,13 +250,11 @@ ping-devops:
       SERVER_PROFILE_PATH: pingauthorizepap
       SERVER_PROFILE_BRANCH: main
       TAIL_LOG_FILES: /opt/out/instance/logs/pingauthorize-pap.log /opt/out/instance/logs/setup.log /opt/out/instance/logs/start-server.log /opt/out/instance/logs/stop-server.log /opt/out/instance/logs/decision-audit.log
-    # image:
-    #   tag: 9.2.0.0-edge
+    image:
+      tag: 9.3.0.0-edge
 
   pingIntelligence:
     enabled: false
-    # image:
-    #   tag: 5.1.1-edge
 
   pingcentral:
     enabled: true

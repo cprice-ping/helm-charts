@@ -39,8 +39,9 @@ type: application
 # 0.4.5 - Adding limits to PF Engine to attempt to stop evictions
 # 0.4.6 - Fixing Ingress for k8s 1.22 \ Bumping `ping-devops`
 # 0.4.7 - Testing with Graviton nodes
+# 0.4.8 - Bumping to edge (not PF)
 
-version: 0.4.7
+version: 0.4.8
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.14
