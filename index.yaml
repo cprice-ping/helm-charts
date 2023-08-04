@@ -2,51 +2,23 @@ apiVersion: v1
 entries:
   ping-facile:
   - apiVersion: v2
-    appVersion: 0.9.14
-    created: "2023-07-10T16:34:08.095814-07:00"
+    appVersion: 0.9.16
+    created: "2023-08-03T22:31:41.511241-04:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
-      version: 0.9.14
+      version: 0.9.16
     description: A chart to deploy a CIAM config using Project Facile
-    digest: 84afd2672b16146aefdf670112ef73c030c5cb3916a902e900429c2986a48b66
+    digest: c5a014d33bb015e8349d1e650e8c80d592bc2b2d647ea33b2e43e12ecb615cfb
     name: ping-facile
     type: application
     urls:
-    - ping-facile-0.4.8.tgz
-    version: 0.4.8
-  - apiVersion: v2
-    appVersion: 0.9.14
-    created: "2023-07-10T16:34:08.073866-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.9.14
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 7a6952db1c4061cac4d415152176a4b73b3b61d3073022b653ff459dc144786a
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.4.7.tgz
-    version: 0.4.7
-  - apiVersion: v2
-    appVersion: 0.9.14
-    created: "2023-07-10T16:34:08.063612-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.9.14
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: aeef05a65e8b57fd536fa11f196dd46a8eec8063bab7cef26493e37cf136297f
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.4.6.tgz
-    version: 0.4.6
+    - ping-facile-0.4.9.tgz
+    version: 0.4.9
   ping-facile-tf:
   - apiVersion: v2
     appVersion: 0.9.4
-    created: "2023-07-10T16:34:08.106703-07:00"
+    created: "2023-08-03T22:31:41.520201-04:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -58,4 +30,4 @@ entries:
     urls:
     - ping-facile-tf-0.0.1.tgz
     version: 0.0.1
-generated: "2023-07-10T16:34:08.053648-07:00"
+generated: "2023-08-03T22:31:41.502841-04:00"
