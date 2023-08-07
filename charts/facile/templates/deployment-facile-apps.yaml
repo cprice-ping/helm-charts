@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ include "facile.name" . }}
+    helm.sh/chart: {{ include "facile.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  name: {{ .Release.Name }}-facile-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: facile-apps
+  template:
+    metadata:
+      labels:
+        app: facile-apps
+    spec:
+      containers:
+        - name: facile-apps
+          image: pricecs/facile-apps:latest
+          imagePullPolicy: "Always"
+          env:
+            - name: RELEASENAME
+              value: {{ .Release.Name | quote}}
