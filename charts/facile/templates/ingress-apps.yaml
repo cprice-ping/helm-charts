@@ -16,9 +16,9 @@ metadata:
 spec:
   tls:
   - hosts:
-      - "{{ include "facile.hostname" . }}-apps"
+      - "{{ .Release.Name }}-apps.ping-devops.com"
   rules:
-  - host: "{{ include "facile.hostname" . }}-apps"
+  - host: "{{ .Release.Name }}-apps.ping-devops.com"
     http:
       paths:
       # Facile Application paths
