@@ -16,9 +16,9 @@ metadata:
 spec:
   tls:
   - hosts:
-      - {{ include "facile.hostname" . }}
+      - "apps.{{ include "facile.hostname" . }}"
   rules:
-  - host: {{ include "facile.hostname" . }}
+  - host: "apps.{{ include "facile.hostname" . }}"
     http:
       paths:
       # Facile Application paths
