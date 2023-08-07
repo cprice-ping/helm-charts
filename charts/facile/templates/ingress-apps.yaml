@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ include "facile.name" . }}
+    helm.sh/chart: {{ include "facile.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    kubernetes.io/ingress.class: nginx-public
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "X-Forwarded-For"
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  name: {{ .Release.Name }}-app-ingress
+spec:
+  tls:
+  - hosts:
+      - {{ include "facile.hostname" . }}
+  rules:
+  - host: {{ include "facile.hostname" . }}
+    http:
+      paths:
+      # Facile Application paths
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Release.Name }}-facile-apps
+            port: 
+              number: 3000
