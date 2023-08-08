@@ -127,14 +127,6 @@ spec:
             port: 
               number: {{ include "pingports.pingDelegatorPort" . }}
       {{- end }}
-      # Facile Application paths
-      - path: /widget/
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Release.Name }}-facile-apps
-            port: 
-              number: 3000
       {{- if .Values.capabilities.accessManager.enabled }}
       # If PA is deployed - everything else goes there...
       - path: /
