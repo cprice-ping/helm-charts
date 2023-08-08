@@ -6,7 +6,7 @@ metadata:
     helm.sh/chart: {{ include "facile.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-  name: {{ .Release.Name }}-facile-apps
+  name: {{ .Release.Name }}-apps
 spec:
   replicas: 1
   selector:
