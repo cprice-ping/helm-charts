@@ -40,10 +40,11 @@ type: application
 # 0.4.6 - Fixing Ingress for k8s 1.22 \ Bumping `ping-devops`
 # 0.4.7 - Testing with Graviton nodes
 # 0.4.8 - Bumping to edge (not PF)
-# 0.4.8 - Bumping ping-devops - all latest versions
-# 0.4.8 - Adding facile-apps image deployment and Ingress paths
+# 0.4.9 - Bumping ping-devops - all latest versions
+# 0.4.10 - Adding facile-apps image deployment and Ingress paths
+# 0.4.11 - Moving PF to new EnvVars for LDAP storage
 
-version: 0.4.10
+version: 0.4.11
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.9.16
