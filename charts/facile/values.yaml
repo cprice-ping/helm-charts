@@ -167,9 +167,9 @@ ping-devops:
       SERVER_PROFILE_BRANCH: main
       PF_LOG_LEVEL: DEBUG
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
-      PF_SERVICE_POINTS_ACCESS_GRANT_MANAGER: org.sourceid.oauth20.token.AccessGrantManagerJdbcImpl
-      PF_SERVICE_POINTS_CLIENT_MANAGER: org.sourceid.oauth20.domain.ClientManagerJdbcImpl
-      PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerJdbcImpl
+      PF_SERVICE_POINTS_ACCESS_GRANT_MANAGER: org.sourceid.oauth20.token.AccessGrantManagerLDAPPingDirectoryImpl
+      PF_SERVICE_POINTS_CLIENT_MANAGER: org.sourceid.oauth20.domain.ClientManagerLdapImpl
+      PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerLdapImpl
     logging: INFO
     workload:
       type: StatefulSet
