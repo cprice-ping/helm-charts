@@ -185,9 +185,9 @@ ping-devops:
       PF_LOG_LEVEL: DEBUG
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
       TAIL_LOG_FILES: /opt/out/instance/log/server.log /opt/out/instance/log/audit.log
-      PF_SERVICE_POINTS_ACCESS_GRANT_MANAGER: org.sourceid.oauth20.token.AccessGrantManagerJdbcImpl
-      PF_SERVICE_POINTS_CLIENT_MANAGER: org.sourceid.oauth20.domain.ClientManagerJdbcImpl
-      PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerJdbcImpl
+      PF_SERVICE_POINTS_ACCESS_GRANT_MANAGER: org.sourceid.oauth20.token.AccessGrantManagerLDAPPingDirectoryImpl
+      PF_SERVICE_POINTS_CLIENT_MANAGER: org.sourceid.oauth20.domain.ClientManagerLdapImpl
+      PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerLdapImpl    
     logging: INFO
     # image:
     #   tag: 11.2.0-edge
