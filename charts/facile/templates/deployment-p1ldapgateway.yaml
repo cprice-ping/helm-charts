@@ -18,11 +18,11 @@ spec:
       labels:
         app: pingoneldapgateway
     spec:
-      nodeSelector:
-        beta.kubernetes.io/arch: "amd64"
+      # nodeSelector:
+      #   beta.kubernetes.io/arch: "amd64"
       containers:
         - name: pingoneldapgateway
-          image: gcr.io/ping-identity/pingone/pingone-ldap-gateway
+          image: pingidentity/pingone-ldap-gateway
           imagePullPolicy: "Always"
           env:
             - name: PING_IDENTITY_ACCEPT_EULA
