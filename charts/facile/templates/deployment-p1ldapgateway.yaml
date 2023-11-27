@@ -18,8 +18,8 @@ spec:
       labels:
         app: pingoneldapgateway
     spec:
-      # nodeSelector:
-      #   beta.kubernetes.io/arch: "amd64"
+      nodeSelector:
+        beta.kubernetes.io/arch: "amd64"
       containers:
         - name: pingoneldapgateway
           image: pingidentity/pingone-ldap-gateway:3.0.1
