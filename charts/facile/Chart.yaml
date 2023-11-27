@@ -44,14 +44,15 @@ type: application
 # 0.4.10 - Adding facile-apps image deployment and Ingress paths
 # 0.4.11 - Moving PF to new EnvVars for LDAP storage
 # 0.4.12 - Removing NodeSelector from PingConfig \ Move Gateway to Docker Hub \ Bump ping-devops
+# 0.4.13 - LDAP Gateway - upgrade to 3.0.1 \ Remove Intel annotation
 
-version: 0.4.12
+version: 0.4.13
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.19
+appVersion: 0.9.20
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.19
+  version: 0.9.20
   repository: https://helm.pingidentity.com
