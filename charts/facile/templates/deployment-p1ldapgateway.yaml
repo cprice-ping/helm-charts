@@ -22,7 +22,7 @@ spec:
         beta.kubernetes.io/arch: "amd64"
       containers:
         - name: pingoneldapgateway
-          image: pingidentity/pingone-ldap-gateway:3.0.1
+          image: pingidentity/pingone-ldap-gateway:3.0.4
           imagePullPolicy: "IfNotPresent"
           env:
             - name: PING_IDENTITY_ACCEPT_EULA
