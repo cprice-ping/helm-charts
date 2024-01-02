@@ -46,14 +46,15 @@ type: application
 # 0.4.12 - Removing NodeSelector from PingConfig \ Move Gateway to Docker Hub \ Bump ping-devops
 # 0.4.13 - LDAP Gateway - upgrade to 3.0.1
 # 0.4.14 - LDAP Gateway - upgrade to 3.0.4 / bumping ping-devops
+# 0.5.0 - Updating to Dec 2023 releases
 
-version: 0.4.14
+version: 0.5.0
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.21
+appVersion: 0.9.22
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.21
+  version: 0.9.22
   repository: https://helm.pingidentity.com

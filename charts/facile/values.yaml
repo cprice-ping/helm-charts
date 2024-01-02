@@ -19,7 +19,7 @@ global:
 
   # Product Image version tag
   # image:
-  #   tag: 2212
+  #   tag: 2312
 
   api:
     # Set to "DEBUG" if you want to see the output of the API calls being made by pingconfig
@@ -174,7 +174,7 @@ ping-devops:
     workload:
       type: StatefulSet
     # image:
-    #   tag: 11.2.0-edge
+    #   tag: 12.0.0-edge
 
   pingfederate-engine:
     enabled: true
@@ -190,7 +190,7 @@ ping-devops:
       PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerLdapImpl    
     logging: INFO
     # image:
-    #   tag: 11.2.0-edge
+    #   tag: 12.0.0-edge
     container:
       resources:
         requests:
