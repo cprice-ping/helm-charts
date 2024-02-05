@@ -47,14 +47,15 @@ type: application
 # 0.4.13 - LDAP Gateway - upgrade to 3.0.1
 # 0.4.14 - LDAP Gateway - upgrade to 3.0.4 / bumping ping-devops
 # 0.5.0 - Updating to Dec 2023 releases
+# 0.5.1 - Bumping ping-devops \ Disable PingCentral \ Set LDAP Gateway replica to 0
 
-version: 0.5.0
+version: 0.5.1
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.9.22
+appVersion: 0.10.0
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.9.22
+  version: 0.10.0
   repository: https://helm.pingidentity.com
