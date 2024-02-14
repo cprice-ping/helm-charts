@@ -48,8 +48,9 @@ type: application
 # 0.4.14 - LDAP Gateway - upgrade to 3.0.4 / bumping ping-devops
 # 0.5.0 - Updating to Dec 2023 releases
 # 0.5.1 - Bumping ping-devops \ Disable PingCentral \ Disable LDAP Gateway
+# 0.5.2 - Enabling LDAP Gateway
 
-version: 0.5.1
+version: 0.5.2
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.10.1
