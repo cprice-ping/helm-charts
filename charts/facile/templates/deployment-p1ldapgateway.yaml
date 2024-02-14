@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ .Release.Name }}-pingoneldapgateway
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: pingoneldapgateway
