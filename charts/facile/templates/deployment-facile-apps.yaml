@@ -24,3 +24,5 @@ spec:
           env:
             - name: RELEASENAME
               value: {{ .Release.Name | quote}}
+            - name: DEBUG
+              value: "false"

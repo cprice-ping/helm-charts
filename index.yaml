@@ -2,51 +2,37 @@ apiVersion: v1
 entries:
   ping-facile:
   - apiVersion: v2
-    appVersion: 0.10.1
-    created: "2024-02-15T10:48:59.544536-08:00"
+    appVersion: 0.10.5
+    created: "2024-06-21T09:51:42.866584-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
-      version: 0.10.1
+      version: 0.10.5
     description: A chart to deploy a CIAM config using Project Facile
-    digest: d9af34cd33892e1c6fbc08adad9d435cbb11afd7cd36049e56d87e5e99d81605
+    digest: b1e679b209fb702378035c00a622c9887eb722aa2a3b62edde66098aa7d7d716
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.5.3.tgz
+    version: 0.5.3
+  - apiVersion: v2
+    appVersion: 0.10.5
+    created: "2024-06-21T09:51:42.860298-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.10.5
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: ccbd8739365d8a24b94820a1db45246e798db118efd408e52c5c6919ecf05ecd
     name: ping-facile
     type: application
     urls:
     - ping-facile-0.5.2.tgz
     version: 0.5.2
-  - apiVersion: v2
-    appVersion: 0.10.1
-    created: "2024-02-15T10:48:59.537998-08:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.10.1
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 5759da977a22e5e9b7470c09733c0d9d7472a90e3f5b29a513616a229d7cb3c5
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.5.1.tgz
-    version: 0.5.1
-  - apiVersion: v2
-    appVersion: 0.9.22
-    created: "2024-02-15T10:48:59.529121-08:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.9.22
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: b7d2cbed0f5bbcac1f5de67c295a96e3508a3f2352b96f20a7de8239a090262d
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.5.0.tgz
-    version: 0.5.0
   ping-facile-tf:
   - apiVersion: v2
     appVersion: 0.9.4
-    created: "2024-02-15T10:48:59.551749-08:00"
+    created: "2024-06-21T09:51:42.87342-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -58,4 +44,4 @@ entries:
     urls:
     - ping-facile-tf-0.0.1.tgz
     version: 0.0.1
-generated: "2024-02-15T10:48:59.522365-08:00"
+generated: "2024-06-21T09:51:42.852354-07:00"
