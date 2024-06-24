@@ -174,7 +174,7 @@ ping-devops:
     workload:
       type: StatefulSet
     image:
-      tag: edge
+      tag: 12.1.0-edge
 
   pingfederate-engine:
     enabled: true
@@ -190,7 +190,7 @@ ping-devops:
       PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerLdapImpl    
     logging: INFO
     image:
-      tag: edge
+      tag: 12.1.0-edge
     container:
       resources:
         requests:
@@ -216,7 +216,7 @@ ping-devops:
       generate: true
     logging: INFO
     image:
-      tag: edge
+      tag: 8.1.0-edge
   
   pingaccess-engine:
     envs:
@@ -228,7 +228,7 @@ ping-devops:
     enabled: false
     logging: INFO
     image:
-      tag: edge
+      tag: 8.1.0-edge
 
   pingdelegator:
     enabled: false
