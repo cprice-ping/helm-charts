@@ -34,3 +34,37 @@ spec:
           # startupProbe:
           #   failureThreshold: 40
           #   periodSeconds: 10
+
+        autoscaling:
+          enabled: false
+          minReplicas: 1
+          maxReplicas: 100
+          targetCPUUtilizationPercentage: 80
+          # targetMemoryUtilizationPercentage: 80
+
+        nodeSelector: {}
+
+        tolerations: []
+
+        affinity: {}
+
+        podAnnotations: {}
+
+        podLabels:
+          app.kubernetes.io/component: am
+
+        podSecurityContext:
+          runAsGroup: 0
+          runAsUser: 11111
+
+        securityContext: {}
+          # capabilities:
+          #   drop:
+          #   - ALL
+          # readOnlyRootFilesystem: true
+          # runAsNonRoot: true
+          # runAsUser: 1000
+
+        service:
+          type: ClusterIP
+          port: 80
