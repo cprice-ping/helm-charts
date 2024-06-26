@@ -23,17 +23,17 @@ spec:
           image: us-docker.pkg.dev/forgeops-public/images/am:dev
           ports:
             - containerPort: 8080  # Specify the container port here
-          livenessProbe:
-            initialDelaySeconds: 30
-            periodSeconds: 30
-            timeoutSeconds: 5
-          readinessProbe:
-            initialDelaySeconds: 20
-            periodSeconds: 10
-            timeoutSeconds: 5
-          startupProbe:
-            failureThreshold: 40
-            periodSeconds: 10
+          # livenessProbe:
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 30
+          #   timeoutSeconds: 5
+          # readinessProbe:
+          #   initialDelaySeconds: 20
+          #   periodSeconds: 10
+          #   timeoutSeconds: 5
+          # startupProbe:
+          #   failureThreshold: 40
+          #   periodSeconds: 10
           securityContext:
             runAsGroup: 0
             runAsUser: 11111
