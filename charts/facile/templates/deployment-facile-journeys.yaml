@@ -21,16 +21,16 @@ spec:
         - name: facile-journeys
           image: us-docker.pkg.dev/forgeops-public/images/am:dev
 
-          livenessProbe:
-            initialDelaySeconds: 30
-            periodSeconds: 30
-            timeoutSeconds: 5
+          # livenessProbe:
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 30
+          #   timeoutSeconds: 5
 
-          readinessProbe:
-            initialDelaySeconds: 20
-            periodSeconds: 10
-            timeoutSeconds: 5
+          # readinessProbe:
+          #   initialDelaySeconds: 20
+          #   periodSeconds: 10
+          #   timeoutSeconds: 5
 
-          startupProbe:
-            failureThreshold: 40
-            periodSeconds: 10
+          # startupProbe:
+          #   failureThreshold: 40
+          #   periodSeconds: 10
