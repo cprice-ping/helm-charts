@@ -50,8 +50,9 @@ type: application
 # 0.5.1 - Bumping ping-devops \ Disable PingCentral \ Disable LDAP Gateway
 # 0.5.2 - Enabling LDAP Gateway
 # 0.5.3 - Updating LDAP Gateway to 3.1.2 ARM \ Bump ping-devops \ PF & PA on edge 
+# 0.5.4 - Playing with PingAM
 
-version: 0.5.3
+version: 0.5.4-alpha
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.10.5
