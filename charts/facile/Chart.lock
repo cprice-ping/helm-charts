@@ -1,6 +1,6 @@
 dependencies:
 - name: ping-devops
   repository: https://helm.pingidentity.com
-  version: 0.10.5
-digest: sha256:c87b967b0225f3849dca9476c03a4a29c10fd466e0f319d1434e7e6c161ae906
-generated: "2024-06-21T09:49:45.699122-07:00"
+  version: 0.10.6
+digest: sha256:d41b38b91932483b2c0c2bfe4606ae4db01fa09b239d829b6f600e60a7242a35
+generated: "2024-07-08T06:51:02.122889-07:00"

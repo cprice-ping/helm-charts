@@ -173,8 +173,8 @@ ping-devops:
     logging: INFO
     workload:
       type: StatefulSet
-    image:
-      tag: 12.1.0-edge
+    # image:
+    #   tag: 12.1.0-edge
 
   pingfederate-engine:
     enabled: true
@@ -189,8 +189,8 @@ ping-devops:
       PF_SERVICE_POINTS_CLIENT_MANAGER: org.sourceid.oauth20.domain.ClientManagerLdapImpl
       PF_SERVICE_POINTS_SESSION_STORAGE_MANAGER: org.sourceid.saml20.service.session.data.impl.SessionStorageManagerLdapImpl    
     logging: INFO
-    image:
-      tag: 12.1.0-edge
+    # image:
+    #   tag: 12.1.0-edge
     container:
       resources:
         requests:
@@ -215,8 +215,8 @@ ping-devops:
     privateCert:
       generate: true
     logging: INFO
-    image:
-      tag: 8.1.0-edge
+    # image:
+    #   tag: 8.1.0-edge
   
   pingaccess-engine:
     envs:
@@ -227,8 +227,8 @@ ping-devops:
       JVM_OPTS: -Dlog4j2.formatMsgNoLookups=true
     enabled: false
     logging: INFO
-    image:
-      tag: 8.1.0-edge
+    # image:
+    #   tag: 8.1.0-edge
 
   pingdelegator:
     enabled: false
