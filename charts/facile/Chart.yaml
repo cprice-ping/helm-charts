@@ -52,14 +52,15 @@ type: application
 # 0.5.3 - Updating LDAP Gateway to 3.1.2 ARM \ Bump ping-devops \ PF & PA on edge 
 # 0.5.4-alpha - Playing with PingAM
 # 0.5.4 - Bumping ping-devops (new versions)
+# 0.5.5 - Bumping ping-devops / Bumping P1 Gateway
 
-version: 0.5.4
+version: 0.5.5
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.10.6
+appVersion: 0.10.7
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.10.6
+  version: 0.10.7
   repository: https://helm.pingidentity.com
