@@ -150,11 +150,6 @@ data:
                 "enabled": true
             },
             {
-                "key": "pazLogonAppId",
-                "value": {{ .Values.pingOne.administration.pazLogonApp.id | quote }},
-                "enabled": true
-            },
-            {
                 "key": "paConsoleURL",
                 "value": "https://{{ include "facile.paAdminHostname" . }}", 
                 "enabled": true

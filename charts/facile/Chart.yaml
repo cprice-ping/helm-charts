@@ -54,14 +54,16 @@ type: application
 # 0.5.4 - Bumping ping-devops (new versions)
 # 0.5.5 - Bumping ping-devops / Bumping P1 Gateway
 # 0.5.6 - Bumping ping-devops / Bumping P1 Gateway
+# 0.5.7 - Cleaning up Ingress Template \ Bumping ping-devops \ All Product jumps to Dec 2024 releases
+# 0.5.8 - Removed `pazLogonId` from Postman ConfigMap \ bumped ping-devops
 
-version: 0.5.6
+version: 0.5.8
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.10.9
+appVersion: 0.11.2
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.10.9
+  version: 0.11.2
   repository: https://helm.pingidentity.com
