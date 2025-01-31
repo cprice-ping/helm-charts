@@ -56,8 +56,9 @@ type: application
 # 0.5.6 - Bumping ping-devops / Bumping P1 Gateway
 # 0.5.7 - Cleaning up Ingress Template \ Bumping ping-devops \ All Product jumps to Dec 2024 releases
 # 0.5.8 - Removed `pazLogonId` from Postman ConfigMap \ bumped ping-devops
+# 0.6.0 - Added Credentials Postman
 
-version: 0.5.8
+version: 0.6.0
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.11.2
