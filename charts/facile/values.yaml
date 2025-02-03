@@ -83,7 +83,7 @@ capabilities:
     enabled: true
   pingcentral:
     enabled: false
-  credentials:
+  verifiableCredentials:
     enabled: false
 
 baseline:
@@ -357,7 +357,7 @@ collections:
     pingcentral:
       name: "PingCentral"
       url: https://api.postman.com/collections/1239082-c1f34f6e-2131-444b-9ecf-227f2213f128?access_key=PMAT-01GMTSPS1VK42KS3QEHPHC8B0W
-    credentials:
+    verifiableCredentials:
       name: "Verifiable Credentials"
       url: https://api.postman.com/collections/1239082-be830159-17aa-401a-bce8-6c9856a0c283?access_key=PMAT-01JJZ8D56C4HNNPNG4PM624V98
   baseline:
