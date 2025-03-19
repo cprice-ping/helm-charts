@@ -57,14 +57,15 @@ type: application
 # 0.5.7 - Cleaning up Ingress Template \ Bumping ping-devops \ All Product jumps to Dec 2024 releases
 # 0.5.8 - Removed `pazLogonId` from Postman ConfigMap \ bumped ping-devops
 # 0.6.0 - Added Credentials Postman
+# 0.6.1 - Added AZ Gateway Deployment \ Bumped ping-devops
 
-version: 0.6.0
+version: 0.6.1
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.11.2
+appVersion: 0.11.5
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.11.2
+  version: 0.11.5
   repository: https://helm.pingidentity.com

@@ -27,4 +27,33 @@ spec:
               value: "yes"
             - name: gatewayCredential
               value: {{ .Values.pingOne.gateways.ldap.credential | quote }}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: {{ include "facile.name" . }}
+    helm.sh/chart: {{ include "facile.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  name: {{ .Release.Name }}-pingoneazgateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingoneazgateway
+  template:
+    metadata:
+      labels:
+        app: pingoneazgateway
+    spec:
+      containers:
+        - name: pingoneazgateway
+          image: pingidentity/pingone-authorize-gateway:1.0.0
+          imagePullPolicy: "IfNotPresent"
+          env:
+            - name: PING_IDENTITY_ACCEPT_EULA
+              value: "yes"
+            - name: gatewayCredential
+              value: {{ .Values.pingOne.gateways.az.credential | quote }}
 {{- end -}}
