@@ -58,8 +58,9 @@ type: application
 # 0.5.8 - Removed `pazLogonId` from Postman ConfigMap \ bumped ping-devops
 # 0.6.0 - Added Credentials Postman
 # 0.6.1 - Added AZ Gateway Deployment \ Bumped ping-devops
+# 0.6.2 - Bumping LDAP Gateway version
 
-version: 0.6.1
+version: 0.6.2
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.11.5

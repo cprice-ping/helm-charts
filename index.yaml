@@ -3,7 +3,21 @@ entries:
   ping-facile:
   - apiVersion: v2
     appVersion: 0.11.5
-    created: "2025-03-19T09:43:12.241701-07:00"
+    created: "2025-04-10T09:50:04.291457-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.11.5
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: d424e649374c0fd17d90b89f1b35edaab0ebb634142216622b67f7f98141e105
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.6.2.tgz
+    version: 0.6.2
+  - apiVersion: v2
+    appVersion: 0.11.5
+    created: "2025-04-10T09:50:04.284625-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -17,7 +31,7 @@ entries:
     version: 0.6.1
   - apiVersion: v2
     appVersion: 0.11.2
-    created: "2025-03-19T09:43:12.234614-07:00"
+    created: "2025-04-10T09:50:04.277162-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -29,32 +43,4 @@ entries:
     urls:
     - ping-facile-0.6.0.tgz
     version: 0.6.0
-  - apiVersion: v2
-    appVersion: 0.11.2
-    created: "2025-03-19T09:43:12.227958-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.11.2
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 448838e07285d54f25ef8f7c4f2a96208cb90c61456676db327087a61e43ab83
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.5.8.tgz
-    version: 0.5.8
-  - apiVersion: v2
-    appVersion: 0.10.9
-    created: "2025-03-19T09:43:12.219657-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.10.9
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 6a07287144c38080db28af00f0c28d4af218d504e6764286a406c736886bbd7f
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.5.6.tgz
-    version: 0.5.6
-generated: "2025-03-19T09:43:12.211288-07:00"
+generated: "2025-04-10T09:50:04.268611-07:00"
