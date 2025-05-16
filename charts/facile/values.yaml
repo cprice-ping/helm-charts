@@ -254,6 +254,7 @@ ping-devops:
   pingauthorizepap:
     enabled: false
     envs:
+      PING_OIDC_USER_CLAIM: "preferred_username"
       SERVER_PROFILE_URL: https://github.com/cprice-ping/Project-Facile.git
       SERVER_PROFILE_PATH: pingauthorizepap
       SERVER_PROFILE_BRANCH: main

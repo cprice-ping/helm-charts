@@ -59,14 +59,15 @@ type: application
 # 0.6.0 - Added Credentials Postman
 # 0.6.1 - Added AZ Gateway Deployment \ Bumped ping-devops
 # 0.6.2 - Bumping LDAP Gateway version
+# 0.6.3 - Bumping ping-devops / Adding PAP EnvVar
 
-version: 0.6.2
+version: 0.6.3
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.11.5
+appVersion: 0.11.7
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.11.5
+  version: 0.11.7
   repository: https://helm.pingidentity.com
