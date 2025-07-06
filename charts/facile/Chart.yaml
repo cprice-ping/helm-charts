@@ -60,14 +60,15 @@ type: application
 # 0.6.1 - Added AZ Gateway Deployment \ Bumped ping-devops
 # 0.6.2 - Bumping LDAP Gateway version
 # 0.6.3 - Bumping ping-devops / Adding PAP EnvVar
+# 0.6.4 - Bumpping ping-devops / June 2025 releases
 
-version: 0.6.3
+version: 0.6.4
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.11.7
+appVersion: 0.11.9
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.11.7
+  version: 0.11.9
   repository: https://helm.pingidentity.com
