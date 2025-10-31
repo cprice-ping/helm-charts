@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: pingoneldapgateway
-          image: pingidentity/pingone-ldap-gateway:3.4.0
+          image: pingidentity/pingone-ldap-gateway:4.0.3
           imagePullPolicy: "IfNotPresent"
           env:
             - name: PING_IDENTITY_ACCEPT_EULA

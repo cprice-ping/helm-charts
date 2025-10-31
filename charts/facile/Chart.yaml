@@ -62,8 +62,9 @@ type: application
 # 0.6.3 - Bumping ping-devops / Adding PAP EnvVar
 # 0.6.4 - Bumping ping-devops / June 2025 releases
 # 0.6.5 - Bumping ping-devops \ Removed P1AZ Gateway while I look at why credential not populating
+# 0.6.6 - Bumping LDAP Gateway deployment to 4.0.3
 
-version: 0.6.5
+version: 0.6.6
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.11.13
