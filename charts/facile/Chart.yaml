@@ -64,14 +64,15 @@ type: application
 # 0.6.5 - Bumping ping-devops \ Removed P1AZ Gateway while I look at why credential not populating
 # 0.6.6 - Bumping LDAP Gateway deployment to 4.0.3
 # 0.6.7 - Bumping ping-devops / Bumping to Dev 2025 releases
+# 0.6.8 - Bumping ping-devops / Bumping to Jun 2026 releases
 
-version: 0.6.7
+version: 0.6.8
 
 # This matches the version of `ping-devops` this chart depends on 
-appVersion: 0.11.16
+appVersion: 0.13.0
 
 # Use PingIdentity Repo to deploy Product Services \ Deployments
 dependencies:
 - name: ping-devops
-  version: 0.11.16
+  version: 0.13.0
   repository: https://helm.pingidentity.com
