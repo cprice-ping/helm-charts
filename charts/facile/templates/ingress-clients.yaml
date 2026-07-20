@@ -169,4 +169,18 @@ spec:
             name: {{ .Release.Name }}-facile-apps
             port:
               number: 3000
+      - path: /cimd-demo
+        pathType: Exact
+        backend:
+          service:
+            name: {{ .Release.Name }}-facile-apps
+            port:
+              number: 3000
+      - path: /callback
+        pathType: Exact
+        backend:
+          service:
+            name: {{ .Release.Name }}-facile-apps
+            port:
+              number: 3000
 {{- end }}

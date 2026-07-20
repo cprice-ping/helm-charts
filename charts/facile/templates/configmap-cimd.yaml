@@ -14,8 +14,7 @@ data:
         "client_id": "https://{{ include "facile.hostname" . }}/cimd.json",
         "client_name": {{ .Values.useCases.cimd.clientName | quote }},
         "redirect_uris": [
-            "https://{{ include "facile.hostname" . }}/callback",
-            "https://oauth.pstmn.io/v1/callback"
+            "https://{{ include "facile.hostname" . }}/callback"
         ],
         "response_types": ["code"],
         "grant_types": ["authorization_code", "refresh_token"],
