@@ -20,8 +20,8 @@ spec:
   - host: {{ include "facile.hostname" . }}
     http:
       paths:
-      - path: /cimd/
-        pathType: Prefix
+      - path: /cimd.json
+        pathType: Exact
         backend:
           service:
             name: {{ .Release.Name }}-facile-apps
@@ -40,7 +40,7 @@ metadata:
 data:
   client-metadata.json: |
     {
-        "client_id": "http://{{ .Release.Name }}-facile-apps:3000/cimd/client-metadata.json",
+        "client_id": "http://{{ .Release.Name }}-facile-apps:3000/cimd.json",
         "client_name": {{ .Values.useCases.cimd.clientName | quote }},
         "redirect_uris": [
             "https://{{ include "facile.hostname" . }}/callback",
