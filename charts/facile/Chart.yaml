@@ -65,8 +65,9 @@ type: application
 # 0.6.6 - Bumping LDAP Gateway deployment to 4.0.3
 # 0.6.7 - Bumping ping-devops / Bumping to Dev 2025 releases
 # 0.6.8 - Bumping ping-devops / Bumping to Jun 2026 releases
+# 0.6.9 - Adding CIMD (Client ID Metadata Document) use case
 
-version: 0.6.8
+version: 0.6.9
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.13.0

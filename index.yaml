@@ -3,7 +3,21 @@ entries:
   ping-facile:
   - apiVersion: v2
     appVersion: 0.13.0
-    created: "2026-07-09T14:11:56.246698-07:00"
+    created: "2026-07-20T10:09:13.664999-07:00"
+    dependencies:
+    - name: ping-devops
+      repository: https://helm.pingidentity.com
+      version: 0.13.0
+    description: A chart to deploy a CIAM config using Project Facile
+    digest: 9b10ac644d08a3352c7ee178cff9b7681b35ed44f5c5b0632e5e3b5ac64ed796
+    name: ping-facile
+    type: application
+    urls:
+    - ping-facile-0.6.9.tgz
+    version: 0.6.9
+  - apiVersion: v2
+    appVersion: 0.13.0
+    created: "2026-07-20T10:09:13.660476-07:00"
     dependencies:
     - name: ping-devops
       repository: https://helm.pingidentity.com
@@ -15,32 +29,4 @@ entries:
     urls:
     - ping-facile-0.6.8.tgz
     version: 0.6.8
-  - apiVersion: v2
-    appVersion: 0.11.16
-    created: "2026-07-09T14:11:56.24335-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.11.16
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 6e46cff093bcd30bc5daf4a71718c3323ea2bfdc5aec85bd0f4f748e8aafabc6
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.6.7.tgz
-    version: 0.6.7
-  - apiVersion: v2
-    appVersion: 0.11.13
-    created: "2026-07-09T14:11:56.239534-07:00"
-    dependencies:
-    - name: ping-devops
-      repository: https://helm.pingidentity.com
-      version: 0.11.9
-    description: A chart to deploy a CIAM config using Project Facile
-    digest: 37459b237ba30ae65c38faf7ed3a59900ed14323769e2e3bc54b943ee2045579
-    name: ping-facile
-    type: application
-    urls:
-    - ping-facile-0.6.6.tgz
-    version: 0.6.6
-generated: "2026-07-09T14:11:56.235015-07:00"
+generated: "2026-07-20T10:09:13.655255-07:00"

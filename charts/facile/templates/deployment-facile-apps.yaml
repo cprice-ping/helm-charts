@@ -26,3 +26,18 @@ spec:
               value: {{ .Release.Name | quote}}
             - name: DEBUG
               value: "false"
+          {{- if .Values.useCases.cimd.enabled }}
+          volumeMounts:
+            - mountPath: /usr/src/app/public/cimd/client-metadata.json
+              name: cimd
+              subPath: client-metadata.json
+          {{- end }}
+      {{- if .Values.useCases.cimd.enabled }}
+      volumes:
+        - name: cimd
+          configMap:
+            name: {{ .Release.Name }}-cimd
+            items:
+              - key: client-metadata.json
+                path: client-metadata.json
+      {{- end }}
