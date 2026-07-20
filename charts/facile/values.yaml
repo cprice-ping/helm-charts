@@ -128,7 +128,7 @@ useCases:
   # The document is available at: http://<release-name>-facile-apps:3000/cimd/client-metadata.json
   # Use this URL as the client_id in PingFederate to demo dynamic client metadata resolution
   cimd:
-    enabled: false
+    enabled: true
     clientName: "Facile CIMD Demo"
     scope: "openid profile email address"
     tokenEndpointAuthMethod: "none"
