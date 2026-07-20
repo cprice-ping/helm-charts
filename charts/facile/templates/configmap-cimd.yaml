@@ -11,7 +11,7 @@ metadata:
 data:
   client-metadata.json: |
     {
-        "client_id": "http://{{ .Release.Name }}-facile-apps:3000/cimd.json",
+        "client_id": "https://{{ include "facile.hostname" . }}/cimd.json",
         "client_name": {{ .Values.useCases.cimd.clientName | quote }},
         "redirect_uris": [
             "https://{{ include "facile.hostname" . }}/callback",
