@@ -28,7 +28,7 @@ spec:
               value: "false"
           {{- if .Values.useCases.cimd.enabled }}
           volumeMounts:
-            - mountPath: /usr/src/app/public/cimd.json
+            - mountPath: /home/nodejs/app/public/cimd.json
               name: cimd
               subPath: client-metadata.json
           {{- end }}
