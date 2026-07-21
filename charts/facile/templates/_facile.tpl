@@ -139,7 +139,7 @@
 {{- define "facile.addPingOneConfigs" -}}
         {{- $merged := merge .Values.pingOne.services.licensed .Values.collections.useCases.pingOneServices -}}
         {{- range $index, $val := $merged -}}
-            {{- if $val.enabled -}}
+            {{- if and $val.enabled $val.url -}}
                 {{ print "," $val.url }}
             {{- end -}}
         {{- end -}}
@@ -151,7 +151,7 @@
         {{- $pingOne := merge .Values.capabilities .Values.collections.capabilities -}}
         {{ print .Values.collections.capabilities.pingOne.url }}
         {{- range $index, $val := $pingOne -}}
-            {{- if $val.enabled -}}
+            {{- if and $val.enabled $val.url -}}
                 {{ print "," $val.url }}
             {{- end -}}
         {{- end -}}
@@ -161,7 +161,7 @@
         {{- $pingOne := merge .Values.capabilities .Values.collections.capabilities -}}
         {{ print .Values.collections.capabilities.pingOne.name }}
         {{- range $index, $val := $pingOne -}}
-            {{- if $val.enabled -}}
+            {{- if and $val.enabled $val.name -}}
                 {{ print ", " $val.name }}
             {{- end -}}
         {{- end -}}
@@ -174,7 +174,7 @@
             {{- printf .Values.collections.baseline.directory.url }}
         {{- end -}}
         {{- range $index, $val := $pingOne -}}
-            {{- if $val.enabled -}}
+            {{- if and $val.enabled $val.url -}}
                 {{ print "," $val.url }}
             {{- end -}}
         {{- end -}}
@@ -187,7 +187,7 @@
             {{- print " " .Values.collections.baseline.directory.name }}
         {{- end -}}
         {{- range $index, $val := $capabilities -}}
-            {{- if $val.enabled -}}
+            {{- if and $val.enabled $val.name -}}
                 {{ print ", " $val.name }}
             {{- end -}}
         {{- end -}}
@@ -198,7 +198,7 @@
 {{- define "facile.useCaseUrls" -}}
     {{- $useCaseURLs := merge .Values.collections.useCases .Values.useCases }}
     {{- range $key, $val := $useCaseURLs }}
-        {{- if $val.enabled }}
+        {{- if and $val.enabled $val.url }}
             {{- print "," $val.url }}
         {{- end }}
     {{- end }}
@@ -208,7 +208,7 @@
 {{- define "facile.useCaseNames" -}}
     {{- $useCaseNames := merge .Values.collections.useCases .Values.useCases }}
     {{- range $key, $val := $useCaseNames }}
-        {{- if $val.enabled }}
+        {{- if and $val.enabled $val.name }}
             {{- print $val.name ", " }}
         {{- end }}
     {{- end }}

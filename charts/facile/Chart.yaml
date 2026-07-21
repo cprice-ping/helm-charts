@@ -69,7 +69,8 @@ type: application
 # 0.6.10 - CIMD: fix redirect_uri same-origin, add /callback ingress + handler
 # 0.6.11 - CIMD: full code→token exchange in app, add /cimd-demo initiation page
 # 0.6.12 - Remove Verifiable Credentials Postman collection (no longer supported by PingOne)
-version: 0.6.12
+# 0.6.13 - Adding safeguards to the Facile templates to prevent errors when no Postman collectionis disabled (e.g., no configmap, no volume, no ingress, etc.)
+version: 0.6.13
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.13.0
