@@ -127,7 +127,7 @@ useCases:
   # Serve a Client ID Metadata Document (CIMD) from the facile-apps container
   # The document is available at: http://<release-name>-facile-apps:3000/cimd/client-metadata.json
   # Use this URL as the client_id in PingFederate to demo dynamic client metadata resolution
-  cimd:
+  agentic:
     enabled: true
     clientName: "Facile CIMD Demo"
     scope: "openid profile email address"
@@ -299,6 +299,9 @@ collections:
     paAsProxy:
       name: "PA as Proxy"
       url: https://www.getpostman.com/collections/eaa397bd3a35ef3095c1
+    agentic:
+      name: "Agentic Use Cases"
+      url: https://api.postman.com/collections/1239082-ab0db934-a87a-411f-b3e7-8f7632034de7?access_key=PMAT-01KY2PPDZ7YSHDFKNMYSQSKGMT
     ciba:
       name: "CIBA"
       # url: https://www.getpostman.com/collections/a2f18fed21e4a14d048a
