@@ -68,8 +68,8 @@ type: application
 # 0.6.9 - Adding CIMD (Client ID Metadata Document) use case
 # 0.6.10 - CIMD: fix redirect_uri same-origin, add /callback ingress + handler
 # 0.6.11 - CIMD: full code→token exchange in app, add /cimd-demo initiation page
-
-version: 0.6.11
+# 0.6.12 - Remove Verifiable Credentials Postman collection (no longer supported by PingOne)
+version: 0.6.12
 
 # This matches the version of `ping-devops` this chart depends on 
 appVersion: 0.13.0
