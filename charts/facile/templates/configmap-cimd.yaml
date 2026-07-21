@@ -1,4 +1,4 @@
-{{- if .Values.useCases.cimd.enabled }}
+{{- if .Values.useCases.agentic.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -12,14 +12,14 @@ data:
   client-metadata.json: |
     {
         "client_id": "https://{{ include "facile.hostname" . }}/cimd.json",
-        "client_name": {{ .Values.useCases.cimd.clientName | quote }},
+        "client_name": {{ .Values.useCases.agentic.clientName | quote }},
         "redirect_uris": [
             "https://{{ include "facile.hostname" . }}/callback"
         ],
         "response_types": ["code"],
         "grant_types": ["authorization_code", "refresh_token"],
-        "token_endpoint_auth_method": {{ .Values.useCases.cimd.tokenEndpointAuthMethod | quote }},
-        "scope": {{ .Values.useCases.cimd.scope | quote }},
+        "token_endpoint_auth_method": {{ .Values.useCases.agentic.tokenEndpointAuthMethod | quote }},
+        "scope": {{ .Values.useCases.agentic.scope | quote }},
         "application_type": "web",
         "subject_type": "public"
     }

@@ -26,13 +26,13 @@ spec:
               value: {{ .Release.Name | quote}}
             - name: DEBUG
               value: "false"
-          {{- if .Values.useCases.cimd.enabled }}
+          {{- if .Values.useCases.agentic.enabled }}
           volumeMounts:
             - mountPath: /home/nodejs/app/public/cimd.json
               name: cimd
               subPath: client-metadata.json
           {{- end }}
-      {{- if .Values.useCases.cimd.enabled }}
+      {{- if .Values.useCases.agentic.enabled }}
       volumes:
         - name: cimd
           configMap:
