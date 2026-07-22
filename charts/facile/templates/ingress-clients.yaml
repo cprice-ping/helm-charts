@@ -183,4 +183,11 @@ spec:
             name: {{ .Release.Name }}-facile-apps
             port:
               number: 3000
+      - path: /token-exchange
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Release.Name }}-facile-apps
+            port:
+              number: 3000
 {{- end }}
